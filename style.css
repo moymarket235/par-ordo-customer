@@ -542,11 +542,31 @@ button {
   text-decoration: none;
   font-size: 20px;
 }
+
+ 
 .logo-image {
+  display: block;
   width: 64px;
   height: 64px;
-  object-fit: cover;
+  flex: 0 0 64px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center;
   border-radius: 50%;
-  border: 2px solid #d9b45f;
-  box-shadow: 0 0 18px #d9b45f55;
+  border: 1.5px solid #d9b45f;
+  background: #080d0a;
+  padding: 1px;
+  margin: 0;
+  transform: none;
+  rotate: 0deg;
+  box-shadow: 0 0 16px #d9b45f44;
 }
+
+@media (max-width: 390px) {
+  .logo-image {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
+}
+
