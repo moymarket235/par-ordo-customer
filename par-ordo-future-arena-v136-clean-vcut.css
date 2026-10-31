@@ -1,0 +1,86 @@
+/* PAR ORDO V136 — CLEAN V-CUT EDGE
+   Fixes the unwanted diagonal highlight inside the text panel.
+   Keeps one glossy green glass strip exactly on the V-shaped cut. */
+
+.hero-panel .hero-dark {
+  background: transparent !important;
+}
+
+/* Solid smoked-glass panel only: intentionally NO diagonal highlight gradient. */
+.hero-panel .hero-dark::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  clip-path: polygon(
+    0 0,
+    69% 0,
+    42% 58%,
+    58.5% 100%,
+    0 100%
+  ) !important;
+  background:
+    linear-gradient(145deg, rgba(0, 18, 11, .995), rgba(0, 8, 5, .99) 62%, rgba(0, 19, 12, .995)) !important;
+  box-shadow: none !important;
+}
+
+/* One thin, glossy glass bevel tracks the black panel's exact V-cut edge. */
+.hero-panel .hero-dark::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 3 !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  clip-path: polygon(
+    68.55% 0,
+    69.75% 0,
+    42.95% 58%,
+    59.45% 100%,
+    57.65% 100%,
+    41.05% 58%
+  ) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 110, 70, .92) 0%,
+    #00c982 19%,
+    #73ffd7 39%,
+    #effff9 50%,
+    #77ffda 61%,
+    #00d991 83%,
+    rgba(0, 100, 65, .92) 100%
+  ) !important;
+  filter:
+    drop-shadow(0 0 2px rgba(240, 255, 249, .98))
+    drop-shadow(0 0 6px rgba(0, 255, 181, .98))
+    drop-shadow(0 0 13px rgba(0, 255, 181, .58)) !important;
+  opacity: 1 !important;
+}
+
+/* No extra gloss stroke across the text side. */
+.hero-panel .hero-content {
+  z-index: 5 !important;
+}
+
+/* Keep the glass edge and photo geometry aligned on narrow phone screens. */
+@media (max-width: 390px) {
+  .hero-panel .hero-dark::before {
+    clip-path: polygon(
+      0 0,
+      69% 0,
+      42% 58%,
+      58.5% 100%,
+      0 100%
+    ) !important;
+  }
+  .hero-panel .hero-dark::after {
+    clip-path: polygon(
+      68.55% 0,
+      69.75% 0,
+      42.95% 58%,
+      59.45% 100%,
+      57.65% 100%,
+      41.05% 58%
+    ) !important;
+  }
+}
