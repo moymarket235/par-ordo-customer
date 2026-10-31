@@ -288,3 +288,82 @@ button {
   transform: scale(.97);
   border-color: #00f5a0;
 }
+
+/* AZA DIGITAL — FUTURE ARENA VISUAL UPGRADE */
+
+.hero {
+  background:
+    linear-gradient(90deg,
+      rgba(3,15,10,.94),
+      rgba(3,15,10,.55)),
+    url("https://raw.githubusercontent.com/moymarket235/parordo/main/assets/par-ordo-hero-future.webp")
+    center/cover no-repeat;
+}
+
+.room {
+  position: relative;
+  isolation: isolate;
+  min-height: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  border-color: #00f5a066;
+  box-shadow: 0 0 15px #00f5a018;
+}
+
+.room::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.05),
+    rgba(0,0,0,.88)
+  );
+}
+
+.room > * {
+  position: relative;
+  z-index: 1;
+}
+
+.room:nth-child(1) {
+  background-image:
+    url("https://raw.githubusercontent.com/moymarket235/parordo/main/assets/par-ordo-steam-room.webp");
+}
+
+.room:nth-child(2) {
+  background-image:
+    url("https://raw.githubusercontent.com/moymarket235/parordo/main/assets/par-ordo-shower-room.webp");
+}
+
+.room:nth-child(3) {
+  background-image:
+    url("https://raw.githubusercontent.com/moymarket235/parordo/main/assets/par-ordo-relax-room.webp");
+}
+
+.room:nth-child(4) {
+  background-image:
+    url("https://raw.githubusercontent.com/moymarket235/parordo/main/assets/par-ordo-spa-background.webp");
+}
+
+.room h3 {
+  color: #ffffff;
+  font-size: 17px;
+  text-shadow: 0 2px 8px #000;
+}
+
+.room p {
+  color: #d5e8dc;
+  text-shadow: 0 2px 5px #000;
+}
+
+@media(max-width:360px) {
+  .room {
+    min-height: 150px;
+  }
+}
