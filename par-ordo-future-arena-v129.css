@@ -1,0 +1,192 @@
+/* PAR ORDO — FUTURE ARENA V129 / GLASS FRAME EDITION
+   Loaded after V128. Visual-only overlay; booking logic/API is untouched. */
+
+:root {
+  --glass-neon: #00f5a5;
+  --glass-white: #caffed;
+  --glass-gold: #f0d47e;
+}
+
+/* HERO OUTER FRAME — transparent glass rim, not a solid overlay */
+.hero-panel {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  clip-path: polygon(0 0, 96.2% 0, 100% 5.5%, 100% 93.8%, 96.1% 100%, 5.2% 100%, 0 94.8%) !important;
+  background: #02150d !important;
+  filter:
+    drop-shadow(0 0 4px rgba(0,245,165,.38))
+    drop-shadow(0 0 13px rgba(0,245,165,.16));
+}
+
+/* Two hollow gradient outlines. The mask keeps the center completely clear. */
+.hero-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 6 !important;
+  inset: 0 !important;
+  padding: 3px !important;
+  pointer-events: none !important;
+  background: linear-gradient(135deg,
+    #effff9 0%, #78ffdb 9%, #00f5a5 23%,
+    rgba(0,245,165,.42) 47%, #00d990 72%,
+    #d9fff2 91%, #00f5a5 100%) !important;
+  clip-path: polygon(0 0, 96.2% 0, 100% 5.5%, 100% 93.8%, 96.1% 100%, 5.2% 100%, 0 94.8%) !important;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  mask-composite: exclude !important;
+  filter: drop-shadow(0 0 5px rgba(0,245,165,.6));
+}
+.hero-panel::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 6 !important;
+  inset: 5px !important;
+  padding: 1.2px !important;
+  pointer-events: none !important;
+  background: linear-gradient(115deg,
+    rgba(233,255,248,.92), rgba(0,245,165,.16) 29%,
+    rgba(107,255,215,.62) 58%, rgba(0,245,165,.1) 80%,
+    rgba(222,255,242,.88)) !important;
+  clip-path: polygon(0 0, 96.2% 0, 100% 5.5%, 100% 93.8%, 96.1% 100%, 5.2% 100%, 0 94.8%) !important;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  mask-composite: exclude !important;
+  opacity: .92;
+}
+
+/* Keep image, dark glass text-side overlay and text in a stable stack. */
+.hero-panel .hero-image { z-index: 0 !important; }
+.hero-panel .hero-dark {
+  z-index: 1 !important;
+  overflow: visible !important;
+  background:
+    linear-gradient(90deg,
+      rgba(0,13,8,.99) 0%, rgba(0,13,8,.97) 31%,
+      rgba(0,13,8,.76) 49%, rgba(0,13,8,.04) 100%),
+    linear-gradient(0deg, rgba(0,0,0,.34), transparent 57%) !important;
+}
+.hero-panel .hero-content { position: relative !important; z-index: 4 !important; }
+.hero-panel .hero-corner { z-index: 7 !important; }
+
+/* THE DIAGONAL PARTITION — glass blade between the text panel and sauna photo.
+   A soft halo sits under a thin bright glass core; it never floods the hero. */
+.hero-panel .hero-dark::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 2 !important;
+  left: 47% !important;
+  top: 27% !important;
+  width: 28% !important;
+  height: 73% !important;
+  pointer-events: none !important;
+  clip-path: polygon(91% 0, 100% 0, 9% 100%, 0 100%) !important;
+  background: linear-gradient(90deg,
+    rgba(0,245,165,0) 0%, rgba(0,245,165,.38) 24%,
+    rgba(0,245,165,.9) 43%, rgba(225,255,245,.98) 51%,
+    rgba(0,245,165,.82) 62%, rgba(0,245,165,0) 100%) !important;
+  filter: blur(5px) !important;
+  opacity: .8 !important;
+}
+.hero-panel .hero-dark::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 3 !important;
+  left: 47% !important;
+  top: 27% !important;
+  width: 28% !important;
+  height: 73% !important;
+  pointer-events: none !important;
+  clip-path: polygon(95% 0, 100% 0, 5% 100%, 0 100%) !important;
+  background: linear-gradient(90deg,
+    rgba(0,33,23,.5) 0%, rgba(0,245,165,.8) 33%,
+    #eafff7 49%, #62ffd1 57%, rgba(0,245,165,.35) 100%) !important;
+  box-shadow: 0 0 5px rgba(210,255,239,.9), 0 0 13px rgba(0,245,165,.85) !important;
+  opacity: .95 !important;
+}
+
+/* CTA GLASS — dark emerald transparent core with clear bevel highlights */
+.neon-book-button {
+  background:
+    linear-gradient(105deg, rgba(0,71,48,.96), rgba(0,145,94,.93) 48%, rgba(0,62,42,.98)),
+    linear-gradient(180deg, rgba(210,255,240,.1), transparent) !important;
+  filter:
+    drop-shadow(0 0 5px rgba(0,255,174,.58))
+    drop-shadow(0 0 14px rgba(0,255,174,.24)) !important;
+}
+.neon-book-button::before {
+  border: 1px solid rgba(220,255,246,.96) !important;
+  box-shadow: inset 0 0 12px rgba(135,255,222,.18), 0 0 7px rgba(183,255,235,.28) !important;
+}
+.neon-book-button::after {
+  background: linear-gradient(90deg, transparent, rgba(239,255,249,.94) 18%, rgba(111,255,213,.88) 82%, transparent) !important;
+  box-shadow: 0 0 7px rgba(0,245,165,.58) !important;
+}
+
+/* STAT TILES — glass bevel with dark smoked-glass center */
+.stat-card {
+  background: linear-gradient(135deg,
+    rgba(211,255,242,.98) 0%, rgba(0,245,165,.85) 13%,
+    rgba(0,77,51,.94) 39%, rgba(0,245,165,.78) 87%,
+    rgba(225,255,246,.96) 100%) !important;
+  filter: drop-shadow(0 0 5px rgba(0,245,165,.18));
+}
+.stat-card::before {
+  background:
+    linear-gradient(150deg, rgba(9,47,34,.98), rgba(1,13,9,.99) 62%, rgba(3,28,19,.98)) !important;
+  box-shadow: inset 0 0 16px rgba(0,245,165,.08) !important;
+}
+.stat-card::after {
+  border: 1px solid rgba(181,255,233,.52) !important;
+  background: linear-gradient(135deg, rgba(212,255,243,.09), transparent 42%, rgba(0,245,165,.06)) !important;
+}
+
+/* ROOM TILES — transparent acrylic edges, preserving photo visibility */
+.room-card {
+  background: linear-gradient(135deg,
+    #e7fff7 0%, #00f5a5 12%, #006947 36%,
+    rgba(1,20,13,.95) 56%, #00c982 86%, #d7fff1 100%) !important;
+  filter: drop-shadow(0 0 5px rgba(0,245,165,.2));
+}
+.room-card::before {
+  background: linear-gradient(135deg,
+    rgba(235,255,248,.62), rgba(0,245,165,.08) 26%,
+    transparent 58%, rgba(0,245,165,.4)) !important;
+}
+.room-card::after {
+  background: linear-gradient(180deg,
+    rgba(220,255,244,.06), transparent 48%, rgba(0,0,0,.28)) !important;
+}
+
+/* OTHER PANELS — same smoked-glass frame vocabulary */
+.contact-panel,
+.booking-panel,
+.profile-panel {
+  backdrop-filter: blur(8px) saturate(135%);
+  -webkit-backdrop-filter: blur(8px) saturate(135%);
+  box-shadow: 0 0 12px rgba(0,245,165,.12), inset 0 0 15px rgba(192,255,237,.035) !important;
+}
+.form-field input, .form-field select, .guest-control {
+  background: linear-gradient(145deg, rgba(4,34,24,.95), rgba(1,15,10,.98)) !important;
+  border-color: rgba(123,255,216,.62) !important;
+  box-shadow: inset 0 0 12px rgba(0,245,165,.055), 0 0 5px rgba(0,245,165,.055) !important;
+}
+.guest-control button {
+  border-color: rgba(151,255,225,.72) !important;
+  box-shadow: inset 0 0 8px rgba(0,245,165,.11), 0 0 7px rgba(0,245,165,.12) !important;
+}
+
+@media (max-width: 390px) {
+  .hero-panel { height: 274px !important; }
+  .hero-panel .hero-dark::before,
+  .hero-panel .hero-dark::after { top: 27% !important; height: 73% !important; }
+  .stat-card { min-height: 88px !important; }
+  .room-card { height: 118px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-panel, .neon-book-button, .stat-card, .room-card { transition: none !important; animation: none !important; }
+}
