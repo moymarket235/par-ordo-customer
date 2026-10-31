@@ -49,7 +49,9 @@ function render() {
     <div class="app">
       <header class="header">
         <div class="brand">
-          <div class="logo">PO</div>
+          <img class="logo-image"
+src="https://raw.githubusercontent.com/moymarket235/parordo/main/assets/par-ordo-logo.jpg"
+alt="PAR ORDO">
           <div>
             <h2>PAR ORDO</h2>
             <p>${t.subtitle}</p>
