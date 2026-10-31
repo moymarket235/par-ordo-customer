@@ -1,0 +1,311 @@
+/* PAR ORDO V138 — REAL GLOSS / CRYSTAL GLASS FRAME FINISH
+   Adds reflective highlights to the existing V137 layout.
+   Does NOT change the V-cut geometry, text, icons, or booking behavior. */
+
+:root {
+  --glass-white: rgba(245, 255, 251, .96);
+  --glass-mint: rgba(135, 255, 221, .92);
+  --glass-neon: rgba(0, 255, 177, .88);
+  --glass-deep: rgba(0, 71, 46, .94);
+}
+
+/* HERO OUTER FRAME — polished multi-layer crystal edge. */
+.hero-panel {
+  filter:
+    drop-shadow(0 0 2px rgba(238,255,248,.92))
+    drop-shadow(0 0 7px rgba(0,255,177,.82))
+    drop-shadow(0 0 18px rgba(0,245,165,.28)) !important;
+}
+.hero-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 8 !important;
+  inset: 0 !important;
+  padding: 3px !important;
+  pointer-events: none !important;
+  clip-path: polygon(0 0,96.4% 0,100% 5%,100% 94%,96.3% 100%,5% 100%,0 95%) !important;
+  background:
+    radial-gradient(ellipse at 27% 0%, rgba(255,255,255,.98) 0%, rgba(192,255,238,.78) 3%, transparent 13%),
+    radial-gradient(ellipse at 80% 100%, rgba(255,255,255,.78) 0%, rgba(0,255,177,.54) 4%, transparent 16%),
+    linear-gradient(112deg,
+      #ffffff 0%, #cffff0 3%, #00ffb1 8%, #00764c 19%,
+      #dffff4 27%, #00bd82 33%, #00613e 49%,
+      #00e9a2 66%, #baffea 79%, #ffffff 85%,
+      #00c982 94%, #eafff7 100%) !important;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  mask-composite: exclude !important;
+  filter:
+    drop-shadow(0 0 2px rgba(243,255,250,.98))
+    drop-shadow(0 0 7px rgba(0,255,190,.95)) !important;
+}
+.hero-panel::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 8 !important;
+  inset: 6px !important;
+  padding: 1.4px !important;
+  pointer-events: none !important;
+  clip-path: polygon(0 0,96.4% 0,100% 5%,100% 94%,96.3% 100%,5% 100%,0 95%) !important;
+  background:
+    linear-gradient(105deg,
+      rgba(255,255,255,.99) 0%,
+      rgba(117,255,218,.94) 8%,
+      rgba(0,160,105,.38) 19%,
+      rgba(230,255,247,.83) 31%,
+      rgba(0,255,177,.27) 46%,
+      rgba(154,255,224,.82) 62%,
+      rgba(0,175,115,.35) 77%,
+      rgba(255,255,255,.98) 92%,
+      rgba(0,255,177,.8) 100%) !important;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  mask-composite: exclude !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 4px rgba(199,255,236,.68)) !important;
+}
+
+/* V CUT GLASS — keep V137 geometry exactly; increase polished edge reflection only. */
+.hero-panel .hero-dark::before {
+  content: none !important;
+  display: none !important;
+}
+.hero-panel .hero-dark::after {
+  /* Keep V137 polygon. Add bright polished bevel, inner white glint and emerald halo. */
+  background:
+    linear-gradient(90deg,
+      rgba(0,92,59,.96) 0%,
+      #00bd7d 14%,
+      #65ffd2 34%,
+      #f7fffb 48%,
+      #dffff4 53%,
+      #5cffcf 66%,
+      #00d58d 84%,
+      rgba(0,83,53,.98) 100%) !important;
+  filter:
+    drop-shadow(0 0 2px rgba(255,255,255,.98))
+    drop-shadow(0 0 5px rgba(0,255,185,1))
+    drop-shadow(0 0 12px rgba(0,255,185,.72))
+    drop-shadow(1px 0 2px rgba(0,40,25,.75)) !important;
+}
+
+/* BOOKING CTA — clear green glass with a diagonal specular reflection. */
+.neon-book-button {
+  background:
+    linear-gradient(118deg,
+      transparent 0%,
+      rgba(255,255,255,.12) 17%,
+      rgba(255,255,255,.34) 20%,
+      rgba(255,255,255,.07) 24%,
+      transparent 33%,
+      transparent 71%,
+      rgba(214,255,242,.12) 82%,
+      rgba(255,255,255,.29) 86%,
+      transparent 91%),
+    linear-gradient(180deg,
+      rgba(231,255,248,.28) 0%,
+      rgba(0,255,177,.10) 12%,
+      transparent 37%,
+      rgba(0,14,9,.24) 100%),
+    linear-gradient(105deg,#00553a 0%,#00a66f 44%,#00704b 72%,#003a27 100%) !important;
+  box-shadow:
+    inset 0 2px 2px rgba(255,255,255,.9),
+    inset 0 0 0 1px rgba(183,255,235,.62),
+    inset 0 -8px 15px rgba(0,0,0,.38),
+    inset 0 0 20px rgba(126,255,221,.23),
+    0 0 7px rgba(0,255,183,.74) !important;
+  filter:
+    drop-shadow(0 0 3px rgba(242,255,249,.78))
+    drop-shadow(0 0 9px rgba(0,255,177,.88))
+    drop-shadow(0 0 19px rgba(0,255,177,.30)) !important;
+}
+.neon-book-button::before {
+  inset: 2px !important;
+  border: 1px solid rgba(241,255,250,.98) !important;
+  background:
+    linear-gradient(125deg,
+      rgba(255,255,255,.38) 0%,
+      rgba(255,255,255,.08) 12%,
+      transparent 31%,
+      transparent 70%,
+      rgba(255,255,255,.16) 88%,
+      rgba(255,255,255,.34) 100%) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.82),
+    inset 0 -4px 10px rgba(0,0,0,.25),
+    0 0 7px rgba(232,255,247,.72) !important;
+}
+.neon-book-button::after {
+  left: 5% !important;
+  right: 5% !important;
+  top: 3px !important;
+  height: 2px !important;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,.95) 13%,
+    #ffffff 25%,
+    #a4ffe4 53%,
+    rgba(255,255,255,.9) 84%,
+    transparent 100%) !important;
+  box-shadow: 0 0 5px #fff, 0 0 12px rgba(0,255,189,.95) !important;
+}
+
+/* STAT TILES — reflective glass faces, not flat dark panels. */
+.stat-card {
+  background:
+    radial-gradient(ellipse at 18% 0%, rgba(255,255,255,.98) 0%, rgba(159,255,229,.72) 3%, transparent 17%),
+    radial-gradient(ellipse at 92% 100%, rgba(255,255,255,.86) 0%, rgba(0,255,177,.5) 4%, transparent 18%),
+    linear-gradient(140deg,
+      #effff9 0%, #00f5a5 7%, #006b46 17%,
+      #baffea 20%, #006943 26%, #00321f 58%,
+      #00d891 79%, #dffff4 84%, #00b979 94%, #f6fffb 100%) !important;
+  filter:
+    drop-shadow(0 0 2px rgba(240,255,249,.88))
+    drop-shadow(0 0 7px rgba(0,255,177,.82))
+    drop-shadow(0 0 13px rgba(0,255,177,.22)) !important;
+}
+.stat-card::before {
+  background:
+    linear-gradient(122deg,
+      rgba(255,255,255,.34) 0%,
+      rgba(255,255,255,.11) 7%,
+      transparent 19%,
+      transparent 69%,
+      rgba(133,255,218,.12) 83%,
+      rgba(255,255,255,.22) 91%,
+      transparent 100%),
+    radial-gradient(ellipse at 20% 0%, rgba(255,255,255,.18), transparent 35%),
+    linear-gradient(155deg,rgba(5,49,34,.96),rgba(0,11,7,.985) 62%,rgba(2,33,22,.96)) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.42),
+    inset 0 0 17px rgba(0,255,177,.18),
+    inset 0 -6px 12px rgba(0,0,0,.36) !important;
+}
+.stat-card::after {
+  border: 1px solid rgba(235,255,248,.9) !important;
+  background:
+    linear-gradient(115deg,
+      rgba(255,255,255,.30) 0%,
+      rgba(255,255,255,.05) 13%,
+      transparent 28%,
+      transparent 70%,
+      rgba(255,255,255,.16) 89%,
+      rgba(255,255,255,.28) 100%) !important;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,.55) !important;
+}
+.stat-icon {
+  color: #9affdf !important;
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 7px rgba(0,255,190,.8)) !important;
+}
+
+/* ROOM TILES — photo under a transparent acrylic surface with reflected edges. */
+.room-card {
+  background:
+    radial-gradient(ellipse at 19% 0%, rgba(255,255,255,.98) 0%, rgba(176,255,234,.72) 3%, transparent 18%),
+    radial-gradient(ellipse at 88% 100%, rgba(255,255,255,.92) 0%, rgba(0,255,177,.55) 4%, transparent 20%),
+    linear-gradient(140deg,#f4fffa 0%,#00f5a5 8%,#006c47 18%,#d8fff0 22%,#00613f 31%,#00321f 59%,#00db91 79%,#eafff7 85%,#00ba7b 94%,#f7fffb 100%) !important;
+  filter:
+    drop-shadow(0 0 2px rgba(240,255,249,.9))
+    drop-shadow(0 0 7px rgba(0,255,177,.86))
+    drop-shadow(0 0 14px rgba(0,255,177,.26)) !important;
+}
+.room-card::before {
+  background:
+    linear-gradient(122deg,
+      rgba(255,255,255,.32) 0%,
+      rgba(255,255,255,.12) 7%,
+      transparent 20%,
+      transparent 67%,
+      rgba(126,255,219,.13) 83%,
+      rgba(255,255,255,.25) 93%,
+      transparent 100%),
+    linear-gradient(135deg,rgba(240,255,250,.20),transparent 27%,transparent 65%,rgba(0,255,177,.13)) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.7),
+    inset 0 0 16px rgba(0,255,177,.22),
+    inset 0 -7px 12px rgba(0,0,0,.35) !important;
+}
+.room-card::after {
+  border: 1px solid rgba(242,255,250,.94) !important;
+  background:
+    linear-gradient(112deg,
+      rgba(255,255,255,.32) 0%,
+      rgba(255,255,255,.06) 12%,
+      transparent 27%,
+      transparent 72%,
+      rgba(255,255,255,.15) 88%,
+      rgba(255,255,255,.3) 100%),
+    linear-gradient(132deg,rgba(241,255,249,.10),transparent 20%,transparent 75%,rgba(0,255,177,.08)) !important;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,.65) !important;
+}
+.room-card img {
+  filter: saturate(1.12) contrast(1.07) brightness(1.08) !important;
+}
+
+/* HEADER BUTTON FRAMES — curved polished glass edges. */
+.header-icon {
+  border: 1px solid rgba(214,255,241,.95) !important;
+  background:
+    linear-gradient(125deg,rgba(255,255,255,.43) 0%,rgba(255,255,255,.10) 12%,transparent 29%,transparent 74%,rgba(255,255,255,.21) 91%,rgba(255,255,255,.36) 100%),
+    linear-gradient(145deg,rgba(10,103,68,.98),rgba(0,19,12,.99) 58%,rgba(0,75,49,.98)) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.92),
+    inset 0 -7px 13px rgba(0,0,0,.45),
+    inset 0 0 13px rgba(127,255,220,.28),
+    0 0 3px rgba(255,255,255,.9),
+    0 0 10px rgba(0,255,177,.78) !important;
+}
+.header-icon::after {
+  height: 2px !important;
+  background: linear-gradient(90deg,transparent,#fff 22%,#b8ffe9 52%,#fff 80%,transparent) !important;
+  box-shadow: 0 0 5px #fff, 0 0 10px rgba(0,255,177,.9) !important;
+}
+
+/* CONTACT / BOOKING PANELS — polished outer rim and faint glass sheen. */
+.contact-panel, .booking-panel, .profile-panel {
+  position: relative !important;
+  isolation: isolate !important;
+  border: 1px solid rgba(228,255,246,.82) !important;
+  background:
+    linear-gradient(125deg,rgba(255,255,255,.16) 0%,transparent 16%,transparent 77%,rgba(255,255,255,.10) 100%),
+    linear-gradient(145deg,rgba(4,58,38,.96),rgba(0,12,8,.98)) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.7),
+    inset 0 -10px 18px rgba(0,0,0,.34),
+    inset 0 0 18px rgba(0,255,177,.13),
+    0 0 5px rgba(0,255,177,.4),
+    0 0 13px rgba(0,255,177,.16) !important;
+}
+.contact-panel::before, .booking-panel::before, .profile-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 2px !important;
+  z-index: -1 !important;
+  border-radius: inherit !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(118deg,rgba(255,255,255,.22),transparent 18%,transparent 80%,rgba(255,255,255,.10)),
+    radial-gradient(ellipse at 15% 0%,rgba(255,255,255,.12),transparent 42%) !important;
+}
+
+/* BOTTOM NAV TOP EDGE — thin glass reflection, preserving current layout. */
+.bottom-navigation {
+  border-top: 1px solid rgba(234,255,247,.88) !important;
+  background:
+    linear-gradient(180deg,rgba(214,255,241,.13) 0%,rgba(0,255,177,.06) 7%,transparent 34%),
+    rgba(0,7,4,.97) !important;
+  box-shadow:
+    0 -1px 0 rgba(0,255,177,.65),
+    0 -6px 22px rgba(0,0,0,.5),
+    0 0 15px rgba(0,255,177,.13) !important;
+}
+
+/* Respect reduced-motion preferences: reflections are static, no flashing animation. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-panel, .neon-book-button, .stat-card, .room-card, .header-icon {
+    animation: none !important;
+    transition: none !important;
+  }
+}
