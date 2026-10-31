@@ -71,17 +71,27 @@ function render() {
           <img class="brand-logo" src="${ASSETS.logo}" alt="PAR ORDO" onerror="this.src='./icon-192.png'">
           <span class="brand-name"><strong>PAR ORDO</strong><small>${t.subtitle}</small><em>⌖ ${t.city}</em></span>
         </a>
-        <div class="header-actions">
-         <button class="header-icon" id="noticeBtn" aria-label="Notifications">
-  <svg viewBox="0 0 24 24" width="21" height="21"
-       fill="none" stroke="currentColor" stroke-width="1.8"
-       stroke-linecap="round" stroke-linejoin="round">
-    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
-    <path d="M10 21h4"/>
-  </svg>
-  <i class="notification-dot"></i>
-</button> 
-        </div>
+        
+<div class="header-actions">
+  <button class="header-icon" id="noticeBtn" aria-label="Notifications">
+    <svg viewBox="0 0 24 24" width="21" height="21"
+         fill="none" stroke="currentColor" stroke-width="1.8"
+         stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+      <path d="M10 21h4"/>
+    </svg>
+    <i class="notification-dot"></i>
+  </button>
+
+  <button class="header-icon" id="menuBtn" aria-label="Menu">
+    <svg viewBox="0 0 24 24" width="22" height="22"
+         fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round">
+      <path d="M3 6h18M3 12h18M3 18h18"/>
+    </svg>
+  </button>
+</div>
+
       </header>
 
       <main class="main-content">
