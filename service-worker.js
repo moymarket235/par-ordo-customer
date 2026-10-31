@@ -1,7 +1,8 @@
-const CACHE_NAME = "par-ordo-future-arena-v4";
+const CACHE_NAME = "par-ordo-future-arena-v5";
 const APP_FILES = [
   "./", "./index.html", "./style.css", "./app.js", "./manifest.json",
-  "./par-ordo-future-arena-v125.css", "./par-ordo-future-arena-v125.js",
+  "./par-ordo-future-arena-v125.css", "./par-ordo-future-arena-v126.css",
+  "./par-ordo-future-arena-v126.js",
   "./par-ordo-logo.png", "./icon-192.png", "./icon-512.png"
 ];
 
@@ -11,7 +12,9 @@ self.addEventListener("install", event => {
 });
 
 self.addEventListener("activate", event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))));
+  event.waitUntil(caches.keys().then(keys =>
+    Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
+  ));
   self.clients.claim();
 });
 
