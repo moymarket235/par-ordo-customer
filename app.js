@@ -275,15 +275,92 @@ function bindEvents() {
     if (event.target.id === "lightbox") closeLightbox();
   });
 
-  const form = document.getElementById("bookingForm");
-  if (form) {
-    form.addEventListener("submit", event => {
-      event.preventDefault();
-      const message = document.getElementById("bookingMessage");
-      message.textContent = translations[language].demo;
-      showToast(language === "ru" ? "Демо-режим: заявка пока не отправляется" : "Демо режим: өтүнмө азырынча жөнөтүлбөйт");
-    });
-  }
+  
+const form = document.getElementById("bookingForm");
+
+if (form) {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+
+    const name = String(data.get("name") || "").trim();
+    const phone = String(data.get("phone") || "").trim();
+    const date = String(data.get("date") || "");
+    const time = String(data.get("time") || "");
+
+    if (name.length < 2 || phone.replace(/\D/g, "").length < 9) {
+      showToast("Атыңызды жана телефон номериңизди текшериңиз");
+      return;
+    }
+
+    if (!date || !time) {
+      showToast("Күндү жана убакытты тандаңыз");
+      return;
+    }
+
+    const submit = form.querySelector('[type="submit"]');
+    const message = document.getElementById("bookingMessage");
+    const originalHTML = submit.innerHTML;
+
+    submit.disabled = true;
+    submit.textContent = "ОТПРАВЛЯЕМ...";
+
+    try {
+      const response = await fetch(
+        "https://par-ordo-api.moimarketjibekjolu.workers.dev/api/public/bookings",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          cache: "no-store",
+          body: JSON.stringify({
+            name,
+            phone,
+            appointmentAt: `${date}T${time}`,
+            guests: guestCount,
+            shorts: false,
+            website: ""
+          })
+        }
+      );
+
+      let result = {};
+      try {
+        result = await response.json();
+      } catch (_) {}
+
+      if (!response.ok || !result?.booking?.id) {
+        throw new Error(result.error || `API ${response.status}`);
+      }
+
+      message.textContent =
+        `Заявка отправлена! Номер: ${result.booking.id}`;
+
+      showToast("Заявка успешно отправлена!");
+
+      form.reset();
+      guestCount = 2;
+      document.getElementById("guestCount").textContent = "2";
+
+    } catch (error) {
+      console.error("PAR ORDO booking:", error);
+
+      message.textContent =
+        "Не удалось отправить заявку. Попробуйте позже.";
+
+      showToast("Ошибка соединения с сервером");
+    } finally {
+      submit.disabled = false;
+      submit.innerHTML = originalHTML;
+    }
+  });
+}
+  
   const count = document.getElementById("guestCount");
   document.getElementById("minusGuests").addEventListener("click", () => {
     guestCount = Math.max(1, guestCount - 1);
