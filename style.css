@@ -481,3 +481,46 @@ button {
     display: flex;
   }
 }
+
+/* FUTURE ARENA — NEON OUTLINE BUTTON */
+
+.book-btn {
+  background: linear-gradient(180deg, #09291d, #04150d) !important;
+  border: 2px solid #00f5a0 !important;
+  color: #f0fff8 !important;
+  border-radius: 15px;
+  box-shadow:
+    inset 0 0 15px #00f5a033,
+    0 0 12px #00f5a066,
+    0 0 28px #00f5a033;
+  letter-spacing: 1px;
+}
+
+.book-btn:active {
+  background: #00a96c !important;
+  transform: scale(.98);
+}
+
+.hero {
+  box-shadow:
+    0 0 25px #00f5a022,
+    inset 0 0 20px #00f5a011;
+}
+
+.booking-form {
+  padding: 16px;
+  border: 1px solid #00f5a066;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #0a2118, #04110b);
+  box-shadow: inset 0 0 20px #00f5a011;
+}
+
+.booking-form input {
+  min-height: 58px;
+  border-radius: 12px;
+  border-color: #00f5a055;
+}
+
+.booking-form .book-btn {
+  min-height: 58px;
+}
