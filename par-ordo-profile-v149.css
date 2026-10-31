@@ -1,0 +1,84 @@
+/* PAR ORDO V149 — COMPACT LAYOUT + PREMIUM BOOKING COUNTER */
+
+/* Remove the artificial empty area caused by the old 60vh content minimum. */
+.main-content {
+  min-height: 0 !important;
+}
+.main-content:has(#profileScreen.active) {
+  min-height: 0 !important;
+}
+#profileScreen.active {
+  min-height: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+.profile-panel.guest-profile-v148 {
+  margin-bottom: 0 !important;
+}
+
+/* Replace the stylized square-looking zero with a clean numeric medallion. */
+.profile-v148-summary {
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 12px !important;
+  min-height: 58px !important;
+  margin: 0 0 12px !important;
+  padding: 9px 12px !important;
+  border-radius: 7px !important;
+  background:
+    linear-gradient(110deg, rgba(0,117,75,.25), rgba(0,16,10,.88)) !important;
+  border: 1px solid rgba(42,190,130,.52) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(111,255,190,.10),
+    0 0 12px rgba(0,170,108,.08) !important;
+}
+.profile-v148-summary strong {
+  display: grid !important;
+  place-items: center !important;
+  flex: 0 0 38px !important;
+  width: 38px !important;
+  height: 38px !important;
+  padding: 0 !important;
+  border: 1px solid rgba(73,224,160,.78) !important;
+  border-radius: 50% !important;
+  color: #8bf0c2 !important;
+  background: radial-gradient(circle at 35% 25%, rgba(30,160,111,.32), rgba(0,19,12,.96) 72%) !important;
+  box-shadow: inset 0 0 9px rgba(42,224,150,.13), 0 0 9px rgba(0,185,115,.15) !important;
+  font-family: "Exo 2", sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  font-variant-numeric: tabular-nums !important;
+  text-shadow: none !important;
+}
+.profile-v148-summary span {
+  display: block !important;
+  flex: 1 1 auto !important;
+  color: #c2e4d2 !important;
+  font-family: "Exo 2", sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  text-align: left !important;
+  letter-spacing: .045em !important;
+}
+
+/* Compact vertical rhythm without shrinking fields or buttons. */
+.profile-panel.guest-profile-v148 {
+  padding-bottom: 12px !important;
+}
+.profile-v148-hero {
+  padding-bottom: 12px !important;
+}
+.profile-v148-history-header {
+  margin-top: 14px !important;
+}
+.profile-v148-account-note {
+  margin-top: 7px !important;
+}
+@media (max-width: 390px) {
+  .profile-panel.guest-profile-v148 {
+    padding-bottom: 10px !important;
+  }
+}
