@@ -1,0 +1,277 @@
+/* PAR ORDO PRO — FUTURE ARENA V121
+   Visual-only skin inspired by the supplied B — FUTURE ARENA reference.
+   Keeps existing HTML, IDs, forms, API calls, booking actions and business logic intact. */
+
+:root{
+  --bg:#031b13!important;
+  --panel:#041f16!important;
+  --panel2:#06291d!important;
+  --gold:#ffd777!important;
+  --gold2:#ffe9a9!important;
+  --line:rgba(67,232,166,.42)!important;
+  --muted:#a5c4b5!important;
+  --green:#43ffad!important;
+}
+
+html,body{background-color:#03170f!important;color:#effff7!important}
+html::before{
+  background-image:
+    linear-gradient(180deg,rgba(1,20,14,.78),rgba(1,18,13,.88) 54%,rgba(1,13,10,.94)),
+    url('./assets/par-ordo-spa-background.webp')!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  opacity:1!important;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.13;
+  background-image:linear-gradient(rgba(71,255,185,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(71,255,185,.13) 1px,transparent 1px);
+  background-size:34px 34px;
+  mask-image:linear-gradient(to bottom,black,transparent 88%);
+}
+
+/* Header / brand */
+html body .header{
+  background:linear-gradient(180deg,rgba(2,29,20,.98),rgba(2,20,15,.96))!important;
+  border-bottom:1px solid rgba(66,255,180,.42)!important;
+  box-shadow:0 8px 25px rgba(0,0,0,.34),0 1px 18px rgba(36,255,164,.07)!important;
+}
+html body .icon-btn{
+  border:1px solid rgba(87,255,190,.55)!important;
+  border-radius:13px 5px 13px 5px!important;
+  background:linear-gradient(145deg,#0b3325,#041a13)!important;
+  color:#ffe29a!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 15px rgba(37,255,164,.09)!important;
+}
+html body .brand img{
+  border:1px solid #ffd36c!important;
+  box-shadow:0 0 0 3px rgba(55,255,174,.12),0 0 21px rgba(45,255,169,.22)!important;
+}
+html body .brand b{color:#f5fff9!important;letter-spacing:.2em!important;font-weight:850!important}
+html body .brand small{color:#72ffd1!important;letter-spacing:.2em!important}
+
+/* Main dashboard hero: angled sauna image panel + green energy edge */
+html body #homeView>.hero,
+html body .manager-hero{
+  position:relative!important;isolation:isolate!important;overflow:hidden!important;
+  border:1px solid rgba(61,255,177,.62)!important;
+  border-radius:20px 7px 20px 7px!important;
+  background:linear-gradient(110deg,rgba(1,27,19,.98) 0%,rgba(2,34,24,.94) 55%,rgba(2,20,15,.84))!important;
+  box-shadow:0 12px 35px rgba(0,0,0,.45),0 0 24px rgba(36,255,164,.10),inset 0 1px 0 rgba(255,255,255,.07)!important;
+}
+html body #homeView>.hero{min-height:168px!important;padding:20px!important}
+html body #homeView>.hero::after{
+  content:"";position:absolute;z-index:-1;top:0;right:0;width:49%;height:100%;
+  background-image:linear-gradient(90deg,rgba(1,26,18,.10),rgba(1,19,14,.02)),url('./assets/par-ordo-spa-background.webp');
+  background-size:cover;background-position:68% center;opacity:.64;
+  clip-path:polygon(33% 0,100% 0,100% 100%,0 100%);
+}
+html body #homeView>.hero::before,
+html body .manager-hero::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  border-top:1px solid rgba(100,255,195,.5);
+  background:linear-gradient(115deg,transparent 0 62%,rgba(49,255,179,.08) 62.2%,transparent 63%);
+}
+html body #homeView>.hero>* ,html body .manager-hero>*{position:relative;z-index:1}
+html body .eyebrow{color:#75ffd0!important;letter-spacing:.18em!important}
+html body .hero h1,html body .manager-hero h1{
+  color:#f4fff9!important;font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;
+  font-weight:950!important;letter-spacing:-.035em!important;text-shadow:0 0 18px rgba(60,255,177,.13)!important;
+}
+html body .hero p,html body .manager-hero p{color:#c0d8cc!important}
+html body .live-badge{
+  border:1px solid #5bffc0!important;border-radius:13px 4px 13px 4px!important;
+  background:linear-gradient(145deg,rgba(3,57,36,.94),rgba(2,26,19,.98))!important;
+  box-shadow:0 0 0 3px rgba(65,255,177,.08),0 0 24px rgba(52,255,173,.18)!important;
+}
+html body .live-badge strong{color:#63ffc0!important;text-shadow:0 0 13px rgba(69,255,181,.34)!important}
+html body .live-badge span{color:#c1e9d6!important}
+
+/* KPI and quick-access tiles */
+html body .kpi,html body .manager-kpi,html body .report-tile{
+  position:relative!important;overflow:hidden!important;
+  border:1px solid rgba(63,229,161,.40)!important;
+  border-radius:15px 5px 15px 5px!important;
+  background:linear-gradient(145deg,rgba(5,43,29,.96),rgba(2,22,16,.98))!important;
+  box-shadow:inset 0 1px 0 rgba(212,255,232,.06),0 8px 22px rgba(0,0,0,.25)!important;
+}
+html body .kpi::before,html body .manager-kpi::before,html body .report-tile::before{
+  content:"";position:absolute;top:0;left:12px;right:12px;height:1px;
+  background:linear-gradient(90deg,transparent,#70ffd0,transparent);opacity:.65;pointer-events:none;
+}
+html body .kpi small,html body .manager-kpi small,html body .report-tile small{color:#b5d4c5!important}
+html body .kpi strong,html body .manager-kpi strong,html body .report-tile b{color:#ffe18f!important;text-shadow:0 0 13px rgba(255,217,119,.12)!important}
+html body .kpi.green strong,html body .manager-kpi.green strong,html body .report-tile.cash b{color:#58ffb4!important;text-shadow:0 0 14px rgba(63,255,177,.22)!important}
+html body .kpi.blue strong,html body .manager-kpi.blue strong,html body .report-tile.transfer b{color:#8dd9ff!important}
+html body .customer-base-launch{
+  position:relative!important;overflow:hidden!important;isolation:isolate!important;
+  border:1px solid rgba(72,255,184,.62)!important;
+  border-radius:17px 6px 17px 6px!important;
+  background:linear-gradient(105deg,rgba(5,47,32,.98),rgba(2,25,18,.98))!important;
+  color:#effff7!important;
+  box-shadow:inset 0 1px 0 rgba(230,255,243,.08),0 0 20px rgba(45,255,170,.09),0 8px 22px rgba(0,0,0,.3)!important;
+}
+html body .customer-base-launch::after{
+  content:"";position:absolute;z-index:-1;right:0;top:0;width:42%;height:100%;
+  background:linear-gradient(110deg,transparent,rgba(39,255,168,.11));
+  clip-path:polygon(40% 0,100% 0,100% 100%,0 100%);
+}
+html body .customer-base-launch-icon{
+  border:1px solid rgba(99,255,190,.7)!important;border-radius:11px 4px 11px 4px!important;
+  background:linear-gradient(145deg,#0c5338,#05291c)!important;color:#ffe08b!important;
+  box-shadow:0 0 14px rgba(58,255,175,.13)!important;
+}
+html body .customer-base-launch-copy strong{color:#f3fff9!important;font-weight:950!important}
+html body .customer-base-launch-copy small{color:#b6d7c6!important}
+html body .customer-base-launch-arrow{color:#5dffbd!important;filter:drop-shadow(0 0 7px rgba(57,255,177,.35))}
+
+/* Sections, filters and operational cards */
+html body .section-head h2,html body .manager-section-title h2{
+  color:#f0fff8!important;font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;
+  font-weight:900!important;letter-spacing:-.025em!important;
+}
+html body .section-head .hint{color:#ffe091!important}
+html body .filter{
+  border:1px solid rgba(71,219,161,.42)!important;border-radius:7px 3px 7px 3px!important;
+  background:#05271b!important;color:#b9d8c8!important;
+}
+html body .filter.active{background:linear-gradient(110deg,#087849,#14d98a)!important;color:#001b10!important;border-color:#58ffc1!important;box-shadow:0 0 14px rgba(44,255,169,.2)!important}
+html body .room,html body .product,html body .history-card,html body .manager-action,html body .manager-top-product{
+  border:1px solid rgba(66,218,156,.36)!important;
+  border-radius:15px 5px 15px 5px!important;
+  background:linear-gradient(145deg,rgba(5,38,27,.97),rgba(2,20,15,.98))!important;
+  box-shadow:inset 0 1px 0 rgba(221,255,237,.045),0 8px 20px rgba(0,0,0,.28)!important;
+}
+html body .room.active{border-color:#48ffc0!important;box-shadow:0 0 0 1px rgba(54,255,176,.22),0 0 19px rgba(38,255,166,.16)!important}
+html body .room.free{border-color:rgba(255,93,90,.75)!important;box-shadow:0 0 16px rgba(255,68,68,.10)!important}
+html body .bracelet{
+  border:1px solid rgba(255,215,119,.82)!important;border-radius:8px 3px 8px 3px!important;
+  background:linear-gradient(145deg,#153d2b,#071d14)!important;color:#ffe39a!important;
+  box-shadow:0 0 13px rgba(255,211,111,.09)!important;
+}
+html body .room-summary,html body .stock-stat{
+  border:1px solid rgba(66,211,151,.26)!important;border-radius:8px 3px 8px 3px!important;
+  background:rgba(1,19,13,.78)!important;
+}
+html body .room-summary span,html body .room-time,html body .product-top small{color:#b3d0c1!important}
+html body .status-switch{border-color:rgba(58,220,151,.34)!important;background:#01150e!important;border-radius:8px 3px 8px 3px!important}
+html body .status-switch .selected-on{background:linear-gradient(120deg,#07562f,#0cae68)!important;border-color:#46f7a5!important;color:#eafff3!important;box-shadow:0 0 13px rgba(45,255,156,.16)!important}
+html body .action,html body .ghost,html body .drawer-links button,html body .manager-exit-control{
+  border:1px solid rgba(93,220,162,.42)!important;border-radius:8px 3px 8px 3px!important;
+  background:linear-gradient(145deg,#0b3022,#041b13)!important;color:#e6fff2!important;
+}
+html body .action.gold,html body .primary{
+  border:1px solid #ffe08a!important;border-radius:8px 3px 8px 3px!important;
+  background:linear-gradient(120deg,#087b4b,#19d98d)!important;color:#001c11!important;
+  box-shadow:0 0 0 2px rgba(44,255,166,.12),0 0 19px rgba(37,255,154,.18),inset 0 1px 0 rgba(255,255,255,.26)!important;
+}
+html body .action.green,html body .complete-btn{background:linear-gradient(120deg,#075b36,#0ab96c)!important;border-color:#50ffc0!important;color:#eafff3!important}
+html body .finish{min-height:52px!important;font-size:12px!important}
+html body .add-product,html body .entry-add{
+  border:1px solid rgba(69,221,156,.36)!important;border-radius:10px 4px 10px 4px!important;
+  background:linear-gradient(145deg,#092d20,#031a12)!important;color:#f0fff7!important;
+}
+html body .entry-add span{color:#ffe092!important}
+
+/* Navigation */
+html body .bottom-nav{
+  background:linear-gradient(180deg,rgba(2,24,17,.95),rgba(0,12,9,.99))!important;
+  border-top:1px solid rgba(77,255,183,.45)!important;
+  box-shadow:0 -8px 28px rgba(0,0,0,.35),0 0 18px rgba(39,255,165,.06)!important;
+}
+html body .nav-item{color:#91b7a4!important}
+html body .nav-item.active{color:#5fffc0!important;text-shadow:0 0 10px rgba(72,255,184,.3)!important}
+html body .nav-item.active span{filter:drop-shadow(0 0 8px rgba(71,255,180,.6))!important}
+html body .drawer{background:rgba(0,8,6,.84)!important;backdrop-filter:blur(8px)!important}
+html body .drawer-panel{
+  background:linear-gradient(180deg,#052b1d,#01150e)!important;
+  border-right:1px solid rgba(82,255,182,.5)!important;
+  box-shadow:20px 0 55px #000!important;
+}
+html body .drawer-brand img{border-color:#ffe08e!important;box-shadow:0 0 0 3px rgba(64,255,180,.15),0 0 26px rgba(48,255,165,.25)!important}
+html body .drawer-brand h2{color:#f1fff8!important}
+html body .drawer-brand small{color:#75ffd0!important}
+
+/* Modals / CRM / booking panels */
+html body .modal{background:rgba(0,8,6,.86)!important;backdrop-filter:blur(7px)!important}
+html body .modal-card,html body #customerBaseModalCard{
+  border:1px solid rgba(81,244,177,.58)!important;
+  border-radius:19px 6px 19px 6px!important;
+  background:linear-gradient(155deg,#082a1d,#03170f 74%,#02130c)!important;
+  box-shadow:0 -12px 44px rgba(0,0,0,.72),0 0 22px rgba(41,255,166,.10)!important;
+}
+html body .modal-head h2{color:#f4fff9!important;font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;font-weight:900!important}
+html body .modal-head .eyebrow{color:#79ffd1!important}
+html body .close{
+  border:1px solid rgba(255,220,137,.58)!important;border-radius:9px 3px 9px 3px!important;
+  background:linear-gradient(145deg,#0c3324,#041b13)!important;color:#ffe9b2!important;
+}
+html body .customer-base-form,html body .customer-base-overview,html body .parordo-feature-panel,html body .customer-base-entry{
+  border-color:rgba(73,218,155,.38)!important;
+  background:linear-gradient(145deg,rgba(5,41,28,.94),rgba(2,20,14,.97))!important;
+}
+html body .customer-base-tabs button,html body .customer-base-tabs [data-parordo-tab]{
+  border:1px solid rgba(91,225,165,.42)!important;border-radius:8px 3px 8px 3px!important;
+  background:linear-gradient(145deg,#0b3022,#041b13)!important;color:#d5ecdf!important;
+}
+html body .customer-base-tabs button.active,html body .customer-base-tabs [data-parordo-tab].active{
+  border-color:#ffe08a!important;background:linear-gradient(120deg,#0b8a55,#20df91)!important;color:#001d12!important;
+  box-shadow:0 0 16px rgba(50,255,169,.19)!important;
+}
+html body .customer-base-field label{color:#ffe39b!important}
+html body .customer-base-field input,html body .customer-base-field textarea,html body .customer-base-search input{
+  border:1px solid rgba(90,239,174,.48)!important;border-radius:8px 3px 8px 3px!important;
+  background:#f3fff8!important;color:#0a2418!important;
+}
+html body .customer-base-field input:focus,html body .customer-base-field textarea:focus,html body .customer-base-search input:focus{border-color:#40ffb1!important;box-shadow:0 0 0 3px rgba(55,255,173,.14)!important}
+html body .customer-base-entry-avatar,html body .manager-action-icon{
+  border:1px solid rgba(255,219,129,.72)!important;border-radius:9px 3px 9px 3px!important;
+  background:linear-gradient(145deg,#0d4a32,#052318)!important;color:#ffe397!important;
+}
+html body .customer-base-entry-main strong,html body .customer-base-entry-main small,html body .customer-base-entry-note{color:#e5f9ed!important}
+html body .customer-base-empty,html body .empty-state{border-color:rgba(92,221,163,.4)!important;background:rgba(2,20,14,.82)!important;color:#bed8c8!important}
+html body .parordo-feature-panel{border-radius:15px 5px 15px 5px!important}
+html body .parordo-action-primary{
+  border:1px solid #ffe08a!important;border-radius:8px 3px 8px 3px!important;
+  background:linear-gradient(120deg,#08794a,#17d78a)!important;color:#001b10!important;
+  box-shadow:0 0 16px rgba(40,255,163,.16)!important;
+}
+html body .parordo-action-ghost{border:1px solid rgba(103,235,175,.5)!important;border-radius:8px 3px 8px 3px!important;background:#08281c!important;color:#edfff5!important}
+html body .parordo-booking-item{border-color:rgba(71,255,184,.44)!important;background:rgba(1,17,12,.78)!important;border-radius:11px 4px 11px 4px!important}
+html body .parordo-booking-item.is-pending{border-color:#44ffc0!important;box-shadow:0 0 16px rgba(54,255,180,.10)!important}
+html body .parordo-active-pill{border-color:rgba(255,218,128,.58)!important;color:#ffe49a!important}
+
+/* Inputs, report panels, login and notices */
+html body input,html body select,html body textarea{
+  accent-color:#20d98b;
+}
+html body .report-panel,html body .manager-profit-panel,html body .expense-form-card,html body .expense-summary-card{
+  border-color:rgba(76,225,161,.43)!important;border-radius:16px 5px 16px 5px!important;
+  background:linear-gradient(145deg,#08291d,#02170f)!important;
+}
+html body .report-total{border-color:#ffe08b!important;background:linear-gradient(145deg,#0b5033,#052317)!important}
+html body .report-total small{color:#c9ecd8!important}
+html body .report-total strong{color:#ffe08e!important}
+html body .login-card{
+  border:1px solid rgba(82,242,174,.58)!important;border-radius:18px 6px 18px 6px!important;
+  background:linear-gradient(150deg,#082b1e,#02150d)!important;
+  box-shadow:0 20px 65px #000a,0 0 24px rgba(53,255,168,.12)!important;
+}
+html body .login-logo{border-color:#ffe08a!important;box-shadow:0 0 0 4px rgba(57,255,172,.13),0 0 24px rgba(51,255,165,.25)!important}
+html body .login-card h1{color:#f3fff8!important;font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;font-weight:900!important}
+html body .login-card input{border-color:rgba(80,230,166,.5)!important}
+html body .toast{border:1px solid rgba(94,255,190,.65)!important;border-radius:10px 4px 10px 4px!important;background:#06291d!important;color:#ffe4a0!important;box-shadow:0 0 22px rgba(40,255,166,.15)!important}
+
+/* Accessibility and compact-phone tuning */
+html body button:focus-visible,html body a:focus-visible,html body input:focus-visible,html body select:focus-visible{
+  outline:2px solid #ffe08a!important;outline-offset:2px!important;
+}
+@media(max-width:390px){
+  html body #homeView>.hero{padding:15px!important;min-height:150px!important}
+  html body #homeView>.hero::after{width:44%;opacity:.52}
+  html body .kpi{padding:10px!important}
+  html body .customer-base-launch{min-height:66px!important;padding:10px!important}
+  html body .section-head h2{font-size:20px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  html body *,html body *::before,html body *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
