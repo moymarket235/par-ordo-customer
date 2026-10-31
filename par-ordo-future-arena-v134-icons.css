@@ -1,0 +1,51 @@
+/* PAR ORDO V134 — SVG ICON RESTORE HOTFIX
+   Loaded after V133. Fixes the accidental global icon hiding rule.
+   Room-card decorative SVGs stay hidden because their labels already contain text. */
+
+svg.fa-icon {
+  display: inline-block !important;
+  width: 1.25em !important;
+  height: 1.25em !important;
+  min-width: 1.25em !important;
+  min-height: 1.25em !important;
+  max-width: 1.25em !important;
+  max-height: 1.25em !important;
+  flex: 0 0 1.25em !important;
+  vertical-align: middle !important;
+  overflow: visible !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  pointer-events: none !important;
+}
+
+/* The room caption already includes its icon-free text label. */
+.room-card-caption strong > svg.fa-icon {
+  display: none !important;
+}
+
+/* Give each icon family its intended size/color without changing layout logic. */
+.hero-guest span svg.fa-icon,
+.hero-benefits li b svg.fa-icon {
+  width: 1.15em !important;
+  height: 1.15em !important;
+}
+.stats-grid .stat-icon svg.fa-icon {
+  width: 1.25em !important;
+  height: 1.25em !important;
+}
+.neon-book-button .calendar-symbol svg.fa-icon {
+  width: 1.3em !important;
+  height: 1.3em !important;
+}
+.nav-button span svg.fa-icon {
+  width: 1.35em !important;
+  height: 1.35em !important;
+}
+.contact-icon svg.fa-icon,
+.contact-arrow svg.fa-icon {
+  width: 1em !important;
+  height: 1em !important;
+}
