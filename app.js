@@ -175,7 +175,25 @@ function render() {
       </nav>
 
       <div class="drawer-backdrop" id="drawerBackdrop">
-        <aside class="side-drawer"><div class="drawer-heading"><div><b>PAR ORDO</b><small>FUTURE ARENA</small></div><button id="closeDrawer" aria-label="${t.close}">×</button></div>
+        <aside class="side-drawer"><.drawer-heading .drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.drawer-brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid #d9b45f;
+  box-shadow: 0 0 14px #d9b45f33;
+}
+
+.drawer-brand span {
+  display: grid;
+  gap: 5px;
+}
           <div class="drawer-language"><span>LANGUAGE / ТИЛ</span><button id="languageBtn">${language === "ru" ? "RU / KG" : "KG / RU"}</button></div>
           <button class="drawer-link" data-drawer-tab="home">${t.home}<b>↗</b></button>
           <button class="drawer-link" data-drawer-tab="booking">${t.bookingTab}<b>↗</b></button>
