@@ -1,4 +1,4 @@
-const CACHE_NAME = "par-ordo-future-arena-v20";
+const CACHE_NAME = "par-ordo-future-arena-v21";
 const APP_FILES = [
   "./", "./index.html", "./style.css", "./app.js", "./manifest.json",
   "./par-ordo-future-arena-v133.css",
@@ -11,6 +11,7 @@ const APP_FILES = [
   "./par-ordo-future-arena-v140-deep-emerald.css",
   "./par-ordo-future-arena-v141-reservation-glass.css",
   "./par-ordo-future-arena-v142-emerald-crystal.css",
+  "./par-ordo-future-arena-v143-aza-motion.css",
   "./par-ordo-future-arena-v126.js",
   "./par-ordo-logo.png", "./icon-192.png", "./icon-512.png"
 ];
