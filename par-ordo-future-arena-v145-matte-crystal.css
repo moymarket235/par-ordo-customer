@@ -1,0 +1,283 @@
+/* PAR ORDO V145 — SHARP EMERALD ICONS + AZA DIGITAL SIGNATURE + MATTE BLACK
+   Crisp SVG strokes, one synchronized motion, bespoke framed ecosystem module.
+   Removes the tiny grid background. Existing booking logic and screen layout are preserved. */
+
+/* MATTE BLACK BACKGROUND — remove the 31px technical grid from V133. */
+html, body {
+  background-color: #030504 !important;
+}
+body {
+  background: #030504 !important;
+  background-image: none !important;
+}
+.app-shell {
+  background: transparent !important;
+}
+
+/* STAT ICONS — crisp, clean emerald lines; no blur or cloudy glow. */
+.stats-grid .stat-icon {
+  color: #36c98e !important;
+}
+.stats-grid .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(1) .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(2) .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(3) .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(4) .stat-icon svg.fa-icon {
+  width: 35px !important;
+  height: 35px !important;
+  min-width: 35px !important;
+  min-height: 35px !important;
+  max-width: 35px !important;
+  max-height: 35px !important;
+  color: #36c98e !important;
+  stroke: #36c98e !important;
+  stroke-width: 2.05 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  fill: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  animation: azaV145IconMotion 4s ease-in-out infinite !important;
+  animation-delay: 0s !important;
+  transform-origin: center center !important;
+  will-change: transform;
+  shape-rendering: geometricPrecision;
+}
+@keyframes azaV145IconMotion {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -2px, 0); }
+}
+
+/* Replace V143's plain text strip with a fully designed ecosystem frame. */
+.contact-panel {
+  flex-wrap: nowrap !important;
+}
+.contact-panel::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* AZA DIGITAL ECOSYSTEM — angular, multi-layer emerald glass identity panel. */
+.aza-ecosystem-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 13px 15px;
+  width: 100%;
+  min-height: 166px;
+  margin: 14px 0 14px;
+  padding: 17px 15px 14px;
+  overflow: hidden;
+  clip-path: polygon(0 12px, 12px 0, calc(100% - 22px) 0, 100% 22px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px));
+  background:
+    linear-gradient(135deg, #006b46 0%, #003b29 5%, #001b12 16%, #00100b 55%, #003a27 90%, #00875a 100%);
+  box-shadow:
+    inset 0 1px 2px rgba(80, 240, 180, .48),
+    inset 0 0 0 1px rgba(0, 180, 116, .42),
+    inset 0 -12px 20px rgba(0, 0, 0, .52),
+    0 0 5px rgba(0, 175, 112, .68),
+    0 0 18px rgba(0, 135, 86, .28);
+}
+.aza-ecosystem-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 4px;
+  clip-path: polygon(0 9px, 9px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 9px), calc(100% - 9px) 100%, 9px 100%, 0 calc(100% - 9px));
+  border: 1px solid rgba(44, 215, 151, .53);
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(0, 183, 117, .20), transparent 38%),
+    linear-gradient(120deg, rgba(39, 204, 142, .10), transparent 35%, transparent 72%, rgba(0, 135, 86, .13)),
+    linear-gradient(145deg, rgba(2, 37, 26, .82), rgba(0, 9, 6, .92));
+  pointer-events: none;
+}
+.aza-ecosystem-card::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: -50%;
+  left: -42%;
+  width: 22%;
+  height: 200%;
+  transform: rotate(24deg);
+  background: linear-gradient(90deg, transparent, rgba(104, 255, 204, .15), transparent);
+  pointer-events: none;
+  animation: azaV145FrameSweep 8s ease-in-out infinite;
+}
+.aza-eco-emblem {
+  position: relative;
+  grid-row: 1;
+  grid-column: 1;
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(49, 219, 153, .76);
+  border-radius: 50%;
+  color: #d9ffed;
+  background:
+    radial-gradient(circle at 32% 25%, rgba(74, 242, 177, .22), transparent 42%),
+    linear-gradient(145deg, rgba(0, 87, 57, .94), rgba(0, 14, 9, .99));
+  box-shadow:
+    inset 0 1px 3px rgba(114, 255, 211, .32),
+    inset 0 0 17px rgba(0, 175, 111, .22),
+    0 0 8px rgba(0, 183, 117, .38);
+}
+.aza-eco-emblem::before {
+  content: "";
+  position: absolute;
+  inset: -7px 4px;
+  border: 1px solid rgba(53, 219, 155, .62);
+  border-radius: 50%;
+  transform: rotate(-32deg);
+  box-shadow: 0 0 7px rgba(0, 175, 112, .20);
+  animation: azaV145Orbit 12s linear infinite;
+}
+.aza-eco-emblem::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #41d99b;
+  box-shadow: 0 0 7px rgba(48, 222, 155, .78);
+}
+.aza-eco-emblem span {
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: .04em;
+  color: #eafff4;
+  text-shadow: 0 0 7px rgba(64, 233, 166, .56);
+}
+.aza-eco-heading {
+  min-width: 0;
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.aza-eco-overline {
+  color: #63dca8;
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-size: 7px;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.aza-eco-heading h2 {
+  margin-top: 5px;
+  color: #ecfff5;
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-size: clamp(14px, 4vw, 20px);
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  text-shadow: 0 0 8px rgba(0, 183, 117, .28);
+}
+.aza-eco-heading h2 span {
+  color: #53dca3;
+}
+.aza-eco-heading p {
+  margin-top: 4px;
+  color: #9bf3c9;
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-size: 9px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: .24em;
+}
+.aza-eco-modules {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(43, 195, 136, .34);
+}
+.aza-eco-modules span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 5px 8px;
+  border: 1px solid rgba(37, 184, 123, .55);
+  border-radius: 3px;
+  color: #baf5d8;
+  background: linear-gradient(145deg, rgba(0, 81, 53, .66), rgba(0, 16, 10, .88));
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-size: 6px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: .07em;
+  box-shadow: inset 0 1px 2px rgba(78, 232, 171, .14), 0 0 5px rgba(0, 152, 97, .13);
+}
+.aza-eco-modules i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #4cdba3;
+  box-shadow: 0 0 5px rgba(48, 213, 148, .66);
+}
+@keyframes azaV145Orbit {
+  from { transform: rotate(-32deg); }
+  to { transform: rotate(328deg); }
+}
+@keyframes azaV145FrameSweep {
+  0%, 15% { left: -42%; opacity: 0; }
+  28% { opacity: .8; }
+  56% { left: 128%; opacity: .4; }
+  72%, 100% { left: 128%; opacity: 0; }
+}
+
+@media (max-width: 390px) {
+  .stats-grid .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(1) .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(2) .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(3) .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(4) .stat-icon svg.fa-icon {
+    width: 33px !important;
+    height: 33px !important;
+    min-width: 33px !important;
+    min-height: 33px !important;
+    max-width: 33px !important;
+    max-height: 33px !important;
+  }
+  .aza-ecosystem-card {
+    grid-template-columns: 68px minmax(0, 1fr);
+    gap: 11px 12px;
+    min-height: 154px;
+    padding: 14px 11px 12px;
+  }
+  .aza-eco-emblem { width: 64px; height: 64px; }
+  .aza-eco-emblem span { font-size: 18px; }
+  .aza-eco-heading h2 { font-size: clamp(13px, 3.9vw, 17px); letter-spacing: .025em; }
+  .aza-eco-heading p { font-size: 8px; letter-spacing: .19em; }
+  .aza-eco-modules { gap: 5px; }
+  .aza-eco-modules span { padding: 5px 6px; font-size: 5.5px; }
+}
+@media (max-width: 340px) {
+  .aza-ecosystem-card { grid-template-columns: 58px minmax(0, 1fr); gap: 9px; }
+  .aza-eco-emblem { width: 55px; height: 55px; }
+  .aza-eco-heading h2 { font-size: 12px; }
+  .aza-eco-modules span { font-size: 5px; padding: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stats-grid .stat-icon svg.fa-icon,
+  .aza-eco-emblem::before,
+  .aza-ecosystem-card::after {
+    animation: none !important;
+    will-change: auto !important;
+  }
+}
