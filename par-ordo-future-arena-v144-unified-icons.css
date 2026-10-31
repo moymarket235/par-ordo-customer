@@ -1,0 +1,59 @@
+/* PAR ORDO V144 — UNIFIED EMERALD ICON MOTION
+   Softer emerald icon color and one synchronized animation for all four statistic icons.
+   V143 AZA DIGITAL title panel, layout and app behavior remain unchanged. */
+
+/* Reduce white/mint appearance: use a deeper, richer emerald-green stroke and glow. */
+.stats-grid .stat-icon {
+  color: #39c98f !important;
+}
+.stats-grid .stat-icon svg.fa-icon {
+  color: #39c98f !important;
+  stroke: #49d49b !important;
+  opacity: .94 !important;
+  filter:
+    drop-shadow(0 0 2px rgba(36, 190, 119, .58))
+    drop-shadow(0 0 6px rgba(0, 164, 98, .48)) !important;
+}
+
+/* One shared animation: same movement, speed, timing and starting phase. */
+.stats-grid .stat-card .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(1) .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(2) .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(3) .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(4) .stat-icon svg.fa-icon {
+  animation: azaStatUnified 3.8s ease-in-out infinite !important;
+  animation-delay: 0s !important;
+  transform-origin: center center !important;
+  will-change: transform !important;
+}
+
+@keyframes azaStatUnified {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -3px, 0) scale(1.055);
+  }
+}
+
+/* On narrow phones, keep the identical cadence and restrained brightness. */
+@media (max-width: 390px) {
+  .stats-grid .stat-icon svg.fa-icon {
+    filter:
+      drop-shadow(0 0 2px rgba(36, 190, 119, .54))
+      drop-shadow(0 0 5px rgba(0, 164, 98, .43)) !important;
+  }
+}
+
+/* Respect device accessibility settings. */
+@media (prefers-reduced-motion: reduce) {
+  .stats-grid .stat-card .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(1) .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(2) .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(3) .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(4) .stat-icon svg.fa-icon {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+}
