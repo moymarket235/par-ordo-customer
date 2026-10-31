@@ -1,0 +1,114 @@
+/* PAR ORDO V137 — ONE CORRECT GLASS EDGE
+   The hero image's clip-path already forms the dark/photo V cut.
+   Hide the inherited, misplaced glow pseudo-element and draw only one edge
+   on the exact same path, using the full hero-panel dimensions. */
+
+.hero-panel .hero-dark {
+  background: transparent !important;
+}
+
+/* This glow layer inherited V133's old 26%-wide box and caused the stray line. */
+.hero-panel .hero-dark::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Reset ALL old dimensions and offsets before drawing the glass seam. */
+.hero-panel .hero-dark::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  box-sizing: border-box !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+
+  /* The bright strip hugs the photo's single V-shaped clipping edge:
+     top 69% -> inner point 42%/58% -> bottom 58.5%. */
+  clip-path: polygon(
+    68.45% 0,
+    69.75% 0,
+    42.85% 58%,
+    59.45% 100%,
+    57.55% 100%,
+    41.15% 58%
+  ) !important;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 104, 68, .94) 0%,
+    #00c982 17%,
+    #8dffe0 38%,
+    #f4fffb 50%,
+    #78ffda 62%,
+    #00d991 84%,
+    rgba(0, 99, 64, .96) 100%
+  ) !important;
+
+  filter:
+    drop-shadow(0 0 2px rgba(239, 255, 248, .98))
+    drop-shadow(0 0 6px rgba(0, 255, 181, .98))
+    drop-shadow(0 0 14px rgba(0, 255, 181, .62)) !important;
+  opacity: 1 !important;
+}
+
+/* Keep the text block above the dark photo boundary. */
+.hero-panel .hero-content {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Reinforce the exact image cut used by the glass edge. */
+.hero-panel .hero-image {
+  clip-path: polygon(
+    69% 0,
+    100% 0,
+    100% 100%,
+    58.5% 100%,
+    42% 58%
+  ) !important;
+}
+
+/* Same full-size reset for narrow mobile screens. */
+@media (max-width: 390px) {
+  .hero-panel .hero-dark::before {
+    content: none !important;
+    display: none !important;
+  }
+  .hero-panel .hero-dark::after {
+    inset: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    clip-path: polygon(
+      68.45% 0,
+      69.75% 0,
+      42.85% 58%,
+      59.45% 100%,
+      57.55% 100%,
+      41.15% 58%
+    ) !important;
+  }
+  .hero-panel .hero-image {
+    clip-path: polygon(
+      69% 0,
+      100% 0,
+      100% 100%,
+      58.5% 100%,
+      42% 58%
+    ) !important;
+  }
+}
