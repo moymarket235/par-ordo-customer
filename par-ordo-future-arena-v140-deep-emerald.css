@@ -1,0 +1,243 @@
+/* PAR ORDO V140 — DEEP EMERALD GLASS
+   Reduce pale/white-looking frame highlights across the interface.
+   Color/material only: no geometry, sizing, spacing, or application logic changes. */
+
+:root {
+  --v140-emerald: #00b978;
+  --v140-jade: #009b63;
+  --v140-deep: #003b27;
+  --v140-mint: #46e8ad;
+  --v140-glass: rgba(64, 232, 167, .78);
+}
+
+/* HERO OUTER FRAME — deep emerald crystal instead of pale silver-mint. */
+.hero-panel::before {
+  background:
+    radial-gradient(ellipse at 27% 0%, rgba(55,226,157,.64) 0%, rgba(0,185,120,.48) 3%, transparent 13%),
+    radial-gradient(ellipse at 80% 100%, rgba(35,210,139,.54) 0%, rgba(0,185,120,.40) 4%, transparent 16%),
+    linear-gradient(112deg,
+      #27d995 0%, #00b978 5%, #006c45 13%, #00d18a 21%,
+      #087b51 30%, #004c32 45%, #00a96d 61%,
+      #36dda0 74%, #007e51 85%, #00b978 95%, #08764d 100%) !important;
+  filter:
+    drop-shadow(0 0 2px rgba(0,207,132,.94))
+    drop-shadow(0 0 7px rgba(0,235,151,.86)) !important;
+}
+
+/* Inner outer-frame pinstripe — saturated green, no silver-white section. */
+.hero-panel::after {
+  background: linear-gradient(110deg,
+    rgba(0,153,97,.94),
+    rgba(54,226,160,.80) 22%,
+    rgba(0,187,120,.88) 53%,
+    rgba(0,139,88,.82) 77%,
+    rgba(35,207,143,.94)) !important;
+  filter: drop-shadow(0 0 4px rgba(0,213,137,.64)) !important;
+}
+
+/* V-CUT GLASS — keep its current shape, recolor its bright face to emerald. */
+.hero-panel .hero-dark::after {
+  background: linear-gradient(90deg,
+    rgba(0,79,50,.98) 0%,
+    #007a4e 17%,
+    #00b978 35%,
+    #43e2a5 48%,
+    #31d99b 53%,
+    #00b978 64%,
+    #008b59 84%,
+    rgba(0,68,43,.98) 100%) !important;
+  filter:
+    drop-shadow(0 0 2px rgba(43,218,151,.86))
+    drop-shadow(0 0 6px rgba(0,213,137,.96))
+    drop-shadow(0 0 13px rgba(0,185,120,.66)) !important;
+}
+
+/* BOOKING BUTTON — glassy emerald, with only a soft mint reflection. */
+.neon-book-button {
+  background:
+    linear-gradient(118deg,
+      transparent 0%,
+      rgba(0,190,122,.18) 17%,
+      rgba(49,221,157,.22) 20%,
+      rgba(0,173,110,.12) 24%,
+      transparent 33%,
+      transparent 71%,
+      rgba(0,180,115,.18) 82%,
+      rgba(48,215,151,.20) 86%,
+      transparent 91%),
+    linear-gradient(180deg,
+      rgba(0,197,126,.22) 0%,
+      rgba(0,162,103,.10) 12%,
+      transparent 37%,
+      rgba(0,14,9,.24) 100%),
+    linear-gradient(105deg,#00452e 0%,#008e5d 44%,#006341 72%,#003321 100%) !important;
+  border-color: rgba(0,191,122,.9) !important;
+  box-shadow:
+    inset 0 2px 2px rgba(43,211,150,.48),
+    inset 0 0 0 1px rgba(0,180,115,.70),
+    inset 0 -8px 15px rgba(0,0,0,.4),
+    inset 0 0 20px rgba(0,197,126,.30),
+    0 0 7px rgba(0,203,130,.78) !important;
+  filter:
+    drop-shadow(0 0 3px rgba(0,191,122,.62))
+    drop-shadow(0 0 9px rgba(0,191,122,.84))
+    drop-shadow(0 0 18px rgba(0,177,113,.30)) !important;
+}
+.neon-book-button::before {
+  border-color: rgba(0,190,122,.92) !important;
+  background: linear-gradient(125deg,
+    rgba(0,188,120,.28) 0%,
+    rgba(0,160,103,.09) 12%,
+    transparent 31%,
+    transparent 70%,
+    rgba(0,178,113,.16) 88%,
+    rgba(30,207,143,.24) 100%) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(0,204,130,.62),
+    inset 0 -4px 10px rgba(0,0,0,.28),
+    0 0 7px rgba(0,181,115,.62) !important;
+}
+.neon-book-button::after {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0,157,100,.78) 13%,
+    #36d99b 25%,
+    #00b978 53%,
+    rgba(0,157,100,.78) 84%,
+    transparent 100%) !important;
+  box-shadow: 0 0 5px rgba(0,190,122,.76), 0 0 12px rgba(0,177,113,.82) !important;
+}
+
+/* STAT CARDS — convert bright pale corners and bevels to jade-green glass. */
+.stat-card {
+  background:
+    radial-gradient(ellipse at 18% 0%, rgba(0,190,122,.68) 0%, rgba(0,161,103,.50) 3%, transparent 17%),
+    radial-gradient(ellipse at 92% 100%, rgba(0,181,116,.58) 0%, rgba(0,146,93,.44) 4%, transparent 18%),
+    linear-gradient(140deg,
+      #00b978 0%, #006e47 7%, #00452e 17%,
+      #00a96d 20%, #00462e 26%, #002719 58%,
+      #008f5d 79%, #00b978 84%, #006d47 94%, #00a96d 100%) !important;
+  filter:
+    drop-shadow(0 0 2px rgba(0,180,115,.82))
+    drop-shadow(0 0 7px rgba(0,177,113,.82))
+    drop-shadow(0 0 13px rgba(0,160,102,.24)) !important;
+}
+.stat-card::before {
+  background:
+    linear-gradient(122deg,
+      rgba(0,190,122,.28) 0%,
+      rgba(0,151,96,.14) 7%,
+      transparent 19%,
+      transparent 67%,
+      rgba(0,166,106,.14) 83%,
+      rgba(0,185,118,.24) 91%,
+      transparent 100%),
+    radial-gradient(ellipse at 20% 0%, rgba(0,173,110,.20), transparent 35%),
+    linear-gradient(155deg,rgba(4,43,29,.97),rgba(0,9,6,.99) 62%,rgba(1,27,18,.98)) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(0,174,111,.58),
+    inset 0 0 17px rgba(0,179,114,.24),
+    inset 0 -6px 12px rgba(0,0,0,.38) !important;
+}
+.stat-card::after {
+  border-color: rgba(0,174,111,.90) !important;
+  background: linear-gradient(115deg,
+    rgba(0,171,109,.25) 0%,
+    rgba(0,137,87,.08) 13%,
+    transparent 28%,
+    transparent 70%,
+    rgba(0,165,105,.15) 89%,
+    rgba(0,190,122,.22) 100%) !important;
+  box-shadow: inset 0 1px 2px rgba(0,177,113,.56) !important;
+}
+
+/* ROOM FRAMES — darker emerald bevel; keep room photos and labels untouched. */
+.room-card {
+  background:
+    radial-gradient(ellipse at 19% 0%, rgba(0,183,117,.70) 0%, rgba(0,154,98,.52) 3%, transparent 18%),
+    radial-gradient(ellipse at 88% 100%, rgba(0,174,111,.60) 0%, rgba(0,143,91,.45) 4%, transparent 20%),
+    linear-gradient(140deg,#00b978 0%,#006b45 8%,#00442d 18%,#00a96d 22%,#00452e 31%,#002719 59%,#008e5c 79%,#00b978 85%,#006b45 94%,#00a96d 100%) !important;
+  filter:
+    drop-shadow(0 0 2px rgba(0,174,111,.86))
+    drop-shadow(0 0 7px rgba(0,173,110,.86))
+    drop-shadow(0 0 14px rgba(0,158,100,.28)) !important;
+}
+.room-card::before {
+  background:
+    linear-gradient(122deg,
+      rgba(0,174,111,.28) 0%,
+      rgba(0,140,89,.14) 7%,
+      transparent 20%,
+      transparent 67%,
+      rgba(0,160,102,.16) 83%,
+      rgba(0,183,117,.24) 93%,
+      transparent 100%),
+    linear-gradient(135deg,rgba(0,164,104,.18),transparent 27%,transparent 65%,rgba(0,155,99,.16)) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(0,171,109,.68),
+    inset 0 0 16px rgba(0,166,106,.25),
+    inset 0 -7px 12px rgba(0,0,0,.37) !important;
+}
+.room-card::after {
+  border-color: rgba(0,177,113,.90) !important;
+  background:
+    linear-gradient(112deg,
+      rgba(0,166,106,.27) 0%,
+      rgba(0,132,84,.08) 12%,
+      transparent 27%,
+      transparent 72%,
+      rgba(0,156,100,.13) 88%,
+      rgba(0,184,117,.22) 100%) !important;
+  box-shadow: inset 0 1px 2px rgba(0,166,106,.60) !important;
+}
+
+/* Header controls — emerald glass, not white glowing outlines. */
+.header-icon {
+  border-color: rgba(0,183,117,.94) !important;
+  background:
+    linear-gradient(125deg,rgba(0,179,114,.30) 0%,rgba(0,137,87,.10) 12%,transparent 29%,transparent 74%,rgba(0,158,100,.17) 91%,rgba(0,190,122,.28) 100%),
+    linear-gradient(145deg,rgba(5,75,49,.99),rgba(0,15,9,.99) 58%,rgba(0,57,37,.99)) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(0,179,114,.78),
+    inset 0 -7px 13px rgba(0,0,0,.48),
+    inset 0 0 13px rgba(0,158,100,.32),
+    0 0 3px rgba(0,166,106,.74),
+    0 0 10px rgba(0,177,113,.78) !important;
+}
+.header-icon::after {
+  background: linear-gradient(90deg,transparent,#00a96d 22%,#38d99b 52%,#008f5c 80%,transparent) !important;
+  box-shadow: 0 0 5px rgba(0,171,109,.82), 0 0 10px rgba(0,153,98,.82) !important;
+}
+
+/* Contact / booking / profile panels — remove pale borders and use jade glass. */
+.contact-panel, .booking-panel, .profile-panel {
+  border-color: rgba(0,164,104,.82) !important;
+  background:
+    linear-gradient(125deg,rgba(0,158,100,.15) 0%,transparent 16%,transparent 77%,rgba(0,147,93,.12) 100%),
+    linear-gradient(145deg,rgba(3,45,30,.97),rgba(0,10,7,.99)) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(0,166,106,.68),
+    inset 0 -10px 18px rgba(0,0,0,.36),
+    inset 0 0 18px rgba(0,160,102,.18),
+    0 0 5px rgba(0,160,102,.46),
+    0 0 13px rgba(0,145,92,.20) !important;
+}
+.contact-panel::before, .booking-panel::before, .profile-panel::before {
+  background:
+    linear-gradient(118deg,rgba(0,164,104,.24),transparent 18%,transparent 80%,rgba(0,140,89,.13)),
+    radial-gradient(ellipse at 15% 0%,rgba(0,153,98,.16),transparent 42%) !important;
+}
+
+/* Bottom nav divider — green glass line, reduced white glare. */
+.bottom-navigation {
+  border-top-color: rgba(0,166,106,.90) !important;
+  background:
+    linear-gradient(180deg,rgba(0,153,98,.16) 0%,rgba(0,128,82,.07) 7%,transparent 34%),
+    rgba(0,7,4,.97) !important;
+  box-shadow:
+    0 -1px 0 rgba(0,160,102,.76),
+    0 -6px 22px rgba(0,0,0,.5),
+    0 0 15px rgba(0,153,98,.18) !important;
+}
+
+/* No clip-path, dimensions, offsets, typography or application behavior changed. */
