@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#030b09">
+  <meta name="theme-color" content="#010805">
   <meta name="description" content="PAR ORDO — премиальная баня и отдых в Бишкеке. AZA DIGITAL ECOSYSTEM.">
   <meta name="application-name" content="PAR ORDO">
   <meta name="mobile-web-app-capable" content="yes">
@@ -15,11 +15,12 @@
   <link rel="apple-touch-icon" href="./icon-192.png">
   <link rel="manifest" href="./manifest.json">
   <link rel="stylesheet" href="./style.css?v=future-arena-2">
-  <link rel="stylesheet" href="./par-ordo-future-arena-v124.css?v=124">
+  <link rel="stylesheet" href="./par-ordo-future-arena-v125.css?v=125">
 </head>
 <body>
   <div id="app"><div class="loading-screen">PAR ORDO <span>FUTURE ARENA</span></div></div>
-  <script src="./app.js?v=future-arena-1" defer></script>
+  <script src="./app.js?v=future-arena-2" defer></script>
+  <script src="./par-ordo-future-arena-v125.js?v=125" defer></script>
   <script>
     let deferredInstallPrompt = null;
     window.addEventListener("beforeinstallprompt", event => {
@@ -30,8 +31,7 @@
     });
     document.addEventListener("click", async event => {
       const installButton = event.target.closest("[data-install-app]");
-      if (!installButton) return;
-      if (!deferredInstallPrompt) return;
+      if (!installButton || !deferredInstallPrompt) return;
       deferredInstallPrompt.prompt();
       await deferredInstallPrompt.userChoice;
       deferredInstallPrompt = null;
@@ -44,7 +44,5 @@
       });
     }
   </script>
-  <script src="./app.js?v=future-arena-1" defer></script>
-<script src="./par-ordo-future-arena-v124.js?v=124" defer></script>
 </body>
 </html>
