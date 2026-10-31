@@ -1,0 +1,57 @@
+/* PAR ORDO V147 — COMPACT ENDING + PROFESSIONAL CITY PIN
+   Reduces duplicated bottom padding and styles a crisp location marker.
+   Existing content, AZA project showcase and booking behavior are untouched. */
+
+/* Remove the excessive empty tail below the AZA ecosystem card.
+   Keep enough body clearance for the fixed bottom navigation. */
+body {
+  padding-bottom: calc(72px + env(safe-area-inset-bottom)) !important;
+}
+.app-shell {
+  padding-bottom: calc(8px + env(safe-area-inset-bottom)) !important;
+}
+
+/* Header city marker — small, precise emerald map-pin SVG. */
+.brand-name em.brand-location {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 5px !important;
+  min-height: 14px;
+  color: #c4d9ce !important;
+  font-family: "Exo 2", "Segoe UI", Arial, sans-serif !important;
+  font-size: 9px !important;
+  line-height: 1.15 !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  letter-spacing: .015em !important;
+  white-space: nowrap;
+}
+.brand-name em.brand-location .brand-city-pin {
+  display: block !important;
+  width: 11px !important;
+  height: 14px !important;
+  min-width: 11px !important;
+  max-width: 11px !important;
+  flex: 0 0 11px !important;
+  color: #52d99f !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  filter: none !important;
+  opacity: 1 !important;
+  vertical-align: middle !important;
+}
+.brand-name em.brand-location span {
+  display: inline-block;
+  color: inherit;
+}
+
+/* Retain normal page spacing on very narrow screens without a large footer gap. */
+@media (max-width: 390px) {
+  .app-shell {
+    padding-bottom: calc(6px + env(safe-area-inset-bottom)) !important;
+  }
+}
