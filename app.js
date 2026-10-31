@@ -55,9 +55,15 @@ function render() {
             <p>${t.subtitle}</p>
           </div>
         </div>
-        <button id="languageBtn" class="lang-btn">
-          ${currentLanguage === "ru" ? "KG" : "RU"}
-        </button>
+        <div class="header-actions">
+  <button id="languageBtn" class="lang-btn">
+    ${currentLanguage === "ru" ? "KG" : "RU"}
+  </button>
+  <button id="noticeBtn" class="header-icon">♧</button>
+  <a href="#rooms" class="header-icon">☰</a>
+</div>
+          
+        
       </header>
 
       <main>
