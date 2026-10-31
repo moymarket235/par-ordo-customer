@@ -171,3 +171,41 @@ button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
   .booking-form { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
+
+
+/* PAR ORDO — DRAWER GOLD LOGO */
+
+.drawer-heading .drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.drawer-brand img {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  border: 1.5px solid #d9b45f;
+  background: #080d0a;
+  box-shadow: 0 0 16px #d9b45f44;
+}
+
+.drawer-brand span {
+  display: grid;
+  gap: 5px;
+}
+
+.drawer-brand b {
+  color: #f4fff8;
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+
+.drawer-brand small {
+  color: #78ffd0;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
