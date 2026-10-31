@@ -1,0 +1,134 @@
+/* PAR ORDO V146 — CRISP EMERALD ICONS + AZA PROJECT SHOWCASE
+   Fixes the parent SVG glow, unifies icon motion and replaces short project tags
+   with four complete AZA ecosystem project names. */
+
+.stats-grid .stat-icon {
+  color: #36c98e !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+.stats-grid .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(1) .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(2) .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(3) .stat-icon svg.fa-icon,
+.stats-grid .stat-card:nth-child(4) .stat-icon svg.fa-icon {
+  color: #36c98e !important;
+  stroke: #36c98e !important;
+  stroke-width: 2.05 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  fill: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  animation: azaV146Unified 4s ease-in-out infinite !important;
+  animation-delay: 0s !important;
+  transform-origin: center center !important;
+  will-change: transform !important;
+}
+@keyframes azaV146Unified {
+  0%, 100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0,-2px,0); }
+}
+
+/* New project showcase: four readable glass modules in a balanced two-column grid. */
+.aza-ecosystem-card {
+  grid-template-columns: 76px minmax(0,1fr) !important;
+  grid-template-rows: auto auto !important;
+  gap: 12px 14px !important;
+  min-height: 0 !important;
+  padding: 16px 13px 13px !important;
+  margin-top: 14px !important;
+}
+.aza-eco-emblem {
+  width: 70px !important;
+  height: 70px !important;
+}
+.aza-eco-heading {
+  min-width: 0 !important;
+}
+.aza-eco-heading h2 {
+  font-size: clamp(14px, 4.1vw, 20px) !important;
+  letter-spacing: .035em !important;
+}
+.aza-eco-modules {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  gap: 7px !important;
+  padding-top: 11px !important;
+}
+.aza-eco-project {
+  display: flex;
+  min-width: 0;
+  min-height: 45px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  padding: 7px 8px;
+  border: 1px solid rgba(38,190,128,.62);
+  border-radius: 4px;
+  background:
+    linear-gradient(125deg, rgba(0,145,92,.17), transparent 46%),
+    linear-gradient(145deg, rgba(2,45,30,.94), rgba(0,12,8,.98));
+  box-shadow:
+    inset 0 1px 2px rgba(71,231,168,.20),
+    inset 0 -5px 9px rgba(0,0,0,.26),
+    0 0 5px rgba(0,152,97,.15);
+}
+.aza-eco-project strong {
+  display: block;
+  max-width: 100%;
+  color: #c9ffe3;
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-size: 7.4px;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: .015em;
+  overflow-wrap: anywhere;
+}
+.aza-eco-project small {
+  display: block;
+  max-width: 100%;
+  color: #9acbb2;
+  font-family: "Exo 2", sans-serif;
+  font-size: 7.3px;
+  line-height: 1.2;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 390px) {
+  .aza-ecosystem-card {
+    grid-template-columns: 64px minmax(0,1fr) !important;
+    gap: 10px 11px !important;
+    padding: 13px 10px 11px !important;
+  }
+  .aza-eco-emblem {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .aza-eco-heading h2 {
+    font-size: clamp(13px, 3.9vw, 17px) !important;
+  }
+  .aza-eco-project {
+    min-height: 43px;
+    padding: 6px 7px;
+  }
+  .aza-eco-project strong { font-size: 6.9px; }
+  .aza-eco-project small { font-size: 6.8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stats-grid .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(1) .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(2) .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(3) .stat-icon svg.fa-icon,
+  .stats-grid .stat-card:nth-child(4) .stat-icon svg.fa-icon {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+}
