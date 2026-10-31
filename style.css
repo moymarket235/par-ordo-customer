@@ -367,3 +367,117 @@ button {
     min-height: 150px;
   }
 }
+
+/* FUTURE ARENA — LAYOUT FINISH */
+
+.hero {
+  position: relative;
+  min-height: 310px;
+  background: #06130e;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, #06130e 0%, transparent 75%),
+    url("https://raw.githubusercontent.com/moymarket235/parordo/main/assets/par-ordo-hero-future.webp")
+    center / cover;
+  clip-path: polygon(30% 0,100% 0,100% 100%,0 100%);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero small,
+.hero h1,
+.hero h3,
+.hero p {
+  max-width: 65%;
+}
+
+.hero h1,
+.hero h3 {
+  text-shadow: 0 2px 14px #000;
+}
+
+.hero .book-btn {
+  width: 100%;
+  margin-top: 18px;
+}
+
+/* FOUR PREMIUM INFO CARDS */
+
+.features {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.feature {
+  min-height: 92px;
+  padding: 10px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  border-color: #00f5a055;
+  background: linear-gradient(145deg, #0b271b, #06130d);
+}
+
+.feature strong {
+  font-size: 21px;
+  margin-bottom: 9px;
+}
+
+.feature p {
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+/* THREE ROOM CARDS */
+
+.rooms {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.room {
+  min-height: 135px;
+  padding: 10px 7px;
+  border-color: #00f5a077;
+}
+
+.room:nth-child(4) {
+  display: none;
+}
+
+.room h3 {
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.room p {
+  font-size: 9px;
+}
+
+@media(max-width: 360px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rooms {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .room:nth-child(4) {
+    display: flex;
+  }
+}
