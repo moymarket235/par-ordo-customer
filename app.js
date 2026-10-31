@@ -148,7 +148,6 @@ function render() {
               <label class="form-field"><span>${t.time}</span><select name="time" required><option value="">${t.selectTime}</option><option>10:00</option><option>13:00</option><option>16:00</option><option>19:00</option></select></label>
               <div class="guest-control"><span>${t.people}</span><div><button type="button" id="minusGuests" aria-label="Decrease">−</button><strong id="guestCount">${guestCount}</strong><button type="button" id="plusGuests" aria-label="Increase">＋</button></div></div>
               <button class="neon-book-button form-submit" type="submit"><span class="calendar-symbol">▦</span><strong>${t.send}</strong><span class="button-arrow">→</span></button>
-              <p class="design-disclaimer">${t.demo}</p>
               <p id="bookingMessage" class="form-message" aria-live="polite"></p>
             </form>
           </div>
