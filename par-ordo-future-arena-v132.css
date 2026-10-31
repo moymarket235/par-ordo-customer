@@ -1,0 +1,174 @@
+/* PAR ORDO — FUTURE ARENA V132 / PHOTO + GALLERY BALANCE
+   Final visual correction layer after V131.
+   Existing application JavaScript and booking endpoint are intentionally unchanged. */
+
+:root {
+  --fa132-neon: #00f3a2;
+  --fa132-glass: #b6ffe8;
+}
+
+/* Give the sauna photograph the wider, more balanced area from the reference. */
+.hero-panel {
+  height: 246px !important;
+}
+.hero-panel .hero-image {
+  width: 75% !important;
+  right: 0 !important;
+  background-position: 57% center !important;
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 42% 55%) !important;
+  filter: saturate(1.16) contrast(1.08) brightness(1.08) !important;
+}
+.hero-panel .hero-dark {
+  background:
+    linear-gradient(90deg,
+      rgba(0,11,7,.99) 0%,
+      rgba(0,11,7,.97) 31%,
+      rgba(0,11,7,.86) 42%,
+      rgba(0,11,7,.48) 54%,
+      rgba(0,11,7,.06) 100%),
+    linear-gradient(0deg, rgba(0,0,0,.30), transparent 56%) !important;
+}
+.hero-panel .hero-dark::before,
+.hero-panel .hero-dark::after {
+  left: 47% !important;
+  top: 27% !important;
+  width: 29% !important;
+  height: 73% !important;
+}
+.hero-panel .hero-content {
+  width: 70% !important;
+  padding-top: 15px !important;
+  padding-bottom: 8px !important;
+}
+.hero-content h1 {
+  margin-top: 11px !important;
+}
+.hero-guest {
+  margin-top: 8px !important;
+}
+.hero-benefits {
+  margin-top: 7px !important;
+  gap: 4px !important;
+}
+.hero-benefits li {
+  font-size: 8.2px !important;
+}
+
+/* Bring the CTA and KPI strip closer to the hero, like the reference composition. */
+.neon-book-button {
+  margin-top: 8px !important;
+  margin-bottom: 10px !important;
+  min-height: 50px !important;
+}
+.stats-grid {
+  gap: 5px !important;
+}
+.stat-card {
+  min-height: 80px !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+.stat-icon {
+  font-size: 18px !important;
+}
+.stat-card small {
+  font-size: 6.5px !important;
+}
+.stat-card strong {
+  font-size: 7.5px !important;
+}
+
+/* Reduce vertical gaps so the gallery preview clears the fixed tab bar. */
+.rooms-section {
+  margin-top: 14px !important;
+}
+.section-heading {
+  margin-bottom: 6px !important;
+  padding-bottom: 7px !important;
+}
+.room-grid {
+  gap: 6px !important;
+}
+.room-card {
+  height: 96px !important;
+}
+.room-card-caption {
+  left: 6px !important;
+  right: 4px !important;
+  bottom: 6px !important;
+}
+.room-card-caption strong,
+.room-card-caption strong .fa-icon-label {
+  font-size: 8.5px !important;
+}
+
+/* Keep content compact without making the hero text collide with the photo. */
+@media (max-width: 390px) {
+  .hero-panel {
+    height: 238px !important;
+  }
+  .hero-panel .hero-image {
+    width: 77% !important;
+    background-position: 58% center !important;
+    clip-path: polygon(39% 0, 100% 0, 100% 100%, 0 100%, 43% 55%) !important;
+  }
+  .hero-panel .hero-content {
+    width: 72% !important;
+    padding: 14px 9px 7px !important;
+  }
+  .hero-content h1 {
+    font-size: 26px !important;
+  }
+  .hero-content h2 {
+    font-size: 14px !important;
+  }
+  .hero-eyebrow {
+    font-size: 7px !important;
+  }
+  .hero-guest {
+    font-size: 8.5px !important;
+    margin-top: 7px !important;
+  }
+  .hero-benefits {
+    gap: 3px !important;
+    margin-top: 6px !important;
+  }
+  .hero-benefits li {
+    font-size: 7.8px !important;
+  }
+  .stat-card {
+    min-height: 77px !important;
+  }
+  .stat-card small {
+    font-size: 6px !important;
+  }
+  .stat-card strong {
+    font-size: 7px !important;
+  }
+  .room-card {
+    height: 92px !important;
+  }
+}
+@media (max-width: 345px) {
+  .hero-panel {
+    height: 232px !important;
+  }
+  .hero-content h1 {
+    font-size: 23px !important;
+  }
+  .hero-benefits li {
+    font-size: 7.2px !important;
+  }
+  .room-card {
+    height: 86px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-panel,
+  .neon-book-button,
+  .stat-card,
+  .room-card {
+    transition: none !important;
+    animation: none !important;
+  }
+}
