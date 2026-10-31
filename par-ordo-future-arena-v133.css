@@ -1,0 +1,531 @@
+/* PAR ORDO — FUTURE ARENA V133 / PURE GLOSS GLASS
+   Consolidated visual system. Replaces the stacked V125–V132 visual layers.
+   No application or booking JavaScript is modified. */
+
+:root {
+  color-scheme: dark;
+  --fa-bg: #010604;
+  --fa-panel: #03170f;
+  --fa-green: #00f5a5;
+  --fa-mint: #caffef;
+  --fa-gold: #f1d783;
+  --fa-white: #f2fff8;
+  --fa-muted: #9cb9aa;
+}
+html, body {
+  min-height: 100%;
+  background: var(--fa-bg) !important;
+  color: var(--fa-white) !important;
+  font-family: "Exo 2", "Segoe UI", Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body {
+  background:
+    radial-gradient(ellipse at 50% -8%, rgba(0,245,165,.18), transparent 34rem),
+    linear-gradient(rgba(0,245,165,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,245,165,.022) 1px, transparent 1px),
+    #010604 !important;
+  background-size: auto, 31px 31px, 31px 31px, auto !important;
+  padding-bottom: calc(76px + env(safe-area-inset-bottom)) !important;
+}
+button, input, select { font-family: inherit !important; }
+button { -webkit-tap-highlight-color: transparent; }
+.app-shell {
+  width: min(100%, 560px) !important;
+  min-height: 100vh;
+  margin: 0 auto !important;
+  padding: 11px 13px calc(100px + env(safe-area-inset-bottom)) !important;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0,52,34,.13), transparent 38%) !important;
+}
+.main-content { min-height: 60vh; }
+
+/* Header — glossy emerald line and polished glass buttons. */
+.app-header {
+  position: relative !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px !important;
+  padding: 3px 0 15px !important;
+  margin-bottom: 13px !important;
+}
+.app-header::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00f5a5, #a9ffe7 27%, #00b978 57%, rgba(0,245,165,.12));
+  box-shadow: 0 0 5px rgba(0,245,165,.72), 0 0 13px rgba(0,245,165,.24);
+}
+.brand { display:flex; align-items:center; gap:9px !important; min-width:0; }
+.brand-logo {
+  width:49px !important; height:49px !important; flex:0 0 49px !important;
+  object-fit:contain;
+  border-radius:50% !important;
+  border:1px solid #e8c36a !important;
+  background:#090c08;
+  box-shadow:0 0 0 2px rgba(0,245,165,.16), 0 0 15px rgba(0,245,165,.20), 0 0 15px rgba(242,190,80,.16) !important;
+}
+.brand-name { display:grid; gap:3px !important; min-width:0; }
+.brand-name strong {
+  color:#f4fff9;
+  font-family:"Orbitron","Exo 2",sans-serif !important;
+  font-size:15px !important;
+  line-height:1.1;
+  letter-spacing:.17em !important;
+  white-space:nowrap;
+}
+.brand-name small {
+  color:#78ffd0 !important; font-size:8px !important;
+  letter-spacing:.22em !important; font-weight:700;
+}
+.brand-name em { color:#d6e9df !important; font-size:9px !important; font-style:normal; }
+.header-actions { display:flex; align-items:center; gap:7px !important; }
+.header-icon {
+  position:relative;
+  width:40px !important; height:40px !important;
+  display:grid; place-items:center;
+  border:1px solid rgba(87,255,207,.86) !important;
+  border-radius:12px !important;
+  color:#baffeb !important;
+  background:
+    linear-gradient(135deg, rgba(229,255,248,.23), transparent 17%),
+    linear-gradient(145deg, rgba(5,73,49,.96), rgba(1,15,9,.98) 55%, rgba(0,57,37,.96)) !important;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.45),
+    inset 0 -7px 15px rgba(0,0,0,.42),
+    0 0 7px rgba(0,245,165,.5),
+    0 0 15px rgba(0,245,165,.16) !important;
+  font-size:20px;
+}
+.header-icon::after {
+  content:""; position:absolute; left:6px; right:6px; top:3px; height:1px;
+  background:linear-gradient(90deg, transparent, #e6fff7, transparent);
+  opacity:.88;
+}
+.notification-dot {
+  position:absolute; width:6px; height:6px; top:7px; right:7px;
+  border-radius:50%; background:#8affdc;
+  box-shadow:0 0 6px #00ffae,0 0 12px #00ffae;
+}
+
+/* Main hero — a clear, bright photo with one continuous glossy diagonal glass blade. */
+.hero-panel {
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:hidden !important;
+  height:260px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  clip-path:polygon(0 0,96.4% 0,100% 5%,100% 94%,96.3% 100%,5% 100%,0 95%) !important;
+  background:#00130b !important;
+  filter:drop-shadow(0 0 5px rgba(0,255,177,.65)) drop-shadow(0 0 16px rgba(0,245,165,.18)) !important;
+}
+.hero-panel::before {
+  content:""; position:absolute; z-index:8; inset:0; padding:3px;
+  pointer-events:none;
+  background:linear-gradient(132deg,
+    #effff9 0%, #9bffe3 4%, #00f5a5 12%, #007b50 27%,
+    rgba(0,245,165,.42) 48%, #00e99e 71%, #eafff7 91%, #00c985 100%);
+  clip-path:polygon(0 0,96.4% 0,100% 5%,100% 94%,96.3% 100%,5% 100%,0 95%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  filter:drop-shadow(0 0 5px rgba(0,255,190,.85));
+}
+.hero-panel::after {
+  content:""; position:absolute; z-index:8; inset:6px; padding:1.3px;
+  pointer-events:none;
+  background:linear-gradient(110deg,
+    rgba(240,255,250,.95),rgba(0,245,165,.18) 22%,
+    rgba(168,255,231,.72) 53%,rgba(0,245,165,.22) 77%,rgba(238,255,249,.9));
+  clip-path:polygon(0 0,96.4% 0,100% 5%,100% 94%,96.3% 100%,5% 100%,0 95%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  opacity:.96;
+}
+.hero-panel .hero-image {
+  position:absolute !important; z-index:0 !important;
+  top:0; right:0; width:72% !important; height:100% !important;
+  background-position:56% center !important;
+  background-size:cover !important;
+  clip-path:polygon(60% 0,100% 0,100% 100%,42% 100%) !important;
+  filter:saturate(1.17) contrast(1.08) brightness(1.09) !important;
+}
+.hero-panel .hero-dark {
+  position:absolute !important; z-index:1 !important; inset:0 !important;
+  background:
+    linear-gradient(90deg,
+      rgba(0,12,7,.99) 0%,
+      rgba(0,12,7,.98) 31%,
+      rgba(0,12,7,.86) 45%,
+      rgba(0,12,7,.38) 59%,
+      rgba(0,12,7,.02) 100%),
+    linear-gradient(0deg,rgba(0,0,0,.34),transparent 54%) !important;
+}
+/* Soft halo under the glass edge. Same diagonal as the picture cut. */
+.hero-panel .hero-dark::before {
+  content:""; position:absolute; z-index:2;
+  left:38%; top:25%; width:26%; height:75%;
+  pointer-events:none;
+  clip-path:polygon(91% 0,100% 0,9% 100%,0 100%);
+  background:linear-gradient(90deg,
+    rgba(0,255,178,0) 0%,
+    rgba(0,255,178,.54) 28%,
+    rgba(160,255,229,.95) 48%,
+    rgba(0,255,178,.82) 62%,
+    rgba(0,255,178,0) 100%);
+  filter:blur(5px);
+  opacity:.95;
+  mix-blend-mode:screen;
+}
+/* Bright core: remove the dark/black seam and replace it with one glass-like line. */
+.hero-panel .hero-dark::after {
+  content:""; position:absolute; z-index:3;
+  left:38%; top:25%; width:26%; height:75%;
+  pointer-events:none;
+  clip-path:polygon(95% 0,100% 0,5% 100%,0 100%);
+  background:linear-gradient(90deg,
+    rgba(0,78,51,.55) 0%,
+    #00c982 22%,
+    #aaffea 43%,
+    #f2fff9 51%,
+    #48ffd0 62%,
+    #00b779 82%,
+    rgba(0,245,165,.1) 100%);
+  box-shadow:0 0 5px #d7fff2,0 0 12px #00ffc0,0 0 22px rgba(0,255,180,.82);
+  filter:drop-shadow(0 0 4px rgba(208,255,240,.92));
+  opacity:1;
+}
+.hero-panel .hero-content {
+  position:relative !important; z-index:5 !important;
+  width:72% !important; height:100%;
+  padding:16px 13px 10px !important;
+  display:flex; flex-direction:column; align-items:flex-start;
+}
+.hero-eyebrow {
+  display:flex; align-items:center; gap:7px;
+  color:#8affdc !important; font-size:8px !important;
+  font-weight:900; letter-spacing:.105em; white-space:nowrap;
+  text-shadow:0 0 8px rgba(0,245,165,.35);
+}
+.hero-eyebrow span {
+  width:7px; height:7px; border-radius:50%;
+  background:#00ffb1; box-shadow:0 0 7px #00ffb1,0 0 13px rgba(0,255,177,.7);
+}
+.hero-content h1 {
+  margin-top:13px !important;
+  color:#f4fff9 !important;
+  font-family:"Orbitron","Exo 2",sans-serif !important;
+  font-size:clamp(26px,7.5vw,35px) !important;
+  line-height:.98 !important;
+  letter-spacing:-.075em !important;
+  font-style:italic; font-weight:900 !important;
+  transform:skewX(-4deg);
+  text-shadow:0 2px 2px #000,0 0 12px rgba(0,245,165,.2);
+  white-space:nowrap;
+}
+.hero-content h2 {
+  margin-top:6px !important;
+  color:var(--fa-gold) !important;
+  font-size:clamp(15px,4.2vw,20px) !important;
+  font-weight:900 !important;
+  line-height:1.05;
+  text-shadow:0 2px 6px #000;
+}
+.hero-guest {
+  display:flex; align-items:center; gap:8px;
+  margin-top:11px !important; padding:4px 7px !important;
+  border-bottom:1px solid rgba(0,245,165,.72) !important;
+  background:linear-gradient(90deg,rgba(0,21,13,.28),transparent) !important;
+  color:#f2fff8 !important; font-size:10px !important; white-space:nowrap;
+}
+.hero-guest span { color:#ffe398 !important; font-size:16px !important; }
+.hero-benefits {
+  list-style:none; display:grid; gap:6px !important; margin-top:10px !important;
+}
+.hero-benefits li {
+  display:flex; align-items:center; gap:8px !important;
+  color:#eafff3 !important; font-size:9px !important; line-height:1.16;
+  white-space:nowrap; text-shadow:0 1px 5px #000;
+}
+.hero-benefits b {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:16px; color:#f5dc8e !important; font-size:15px !important;
+}
+.hero-panel .hero-corner { display:none !important; }
+
+/* Glossy booking CTA: transparent emerald glass, bright beveled rim and reflections. */
+.neon-book-button {
+  position:relative !important; isolation:isolate;
+  width:100%; min-height:55px !important;
+  display:flex; align-items:center; justify-content:center; gap:13px;
+  overflow:hidden;
+  margin:11px 0 13px !important; padding:10px 14px;
+  border:0 !important; border-radius:0 !important;
+  clip-path:polygon(3.5% 0,96.5% 0,100% 17%,100% 83%,96.5% 100%,3.5% 100%,0 83%,0 17%);
+  color:#f4fff9 !important;
+  background:
+    linear-gradient(115deg,rgba(224,255,247,.30) 0%,transparent 12%,transparent 81%,rgba(207,255,240,.22) 94%),
+    linear-gradient(105deg,#004b32 0%,#00a96d 45%,#006044 72%,#003b28 100%) !important;
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.44),inset 0 -10px 16px rgba(0,0,0,.4) !important;
+  filter:drop-shadow(0 0 5px rgba(0,255,174,.82)) drop-shadow(0 0 15px rgba(0,255,174,.3)) !important;
+}
+.neon-book-button::before {
+  content:""; position:absolute; z-index:-1; inset:3px;
+  border:1px solid rgba(231,255,248,.95);
+  clip-path:polygon(3.5% 0,96.5% 0,100% 17%,100% 83%,96.5% 100%,3.5% 100%,0 83%,0 17%);
+  box-shadow:inset 0 0 16px rgba(175,255,232,.26),0 0 8px rgba(209,255,241,.45);
+  pointer-events:none;
+}
+.neon-book-button::after {
+  content:""; position:absolute; z-index:0;
+  left:7%; right:7%; top:5px; height:2px;
+  background:linear-gradient(90deg,transparent,#f4fffb 22%,#80ffdc 52%,#eafff7 78%,transparent);
+  box-shadow:0 0 7px rgba(0,255,184,.9),0 0 15px rgba(0,255,184,.55);
+  pointer-events:none;
+}
+.neon-book-button strong {
+  position:relative; z-index:1;
+  font-size:13px !important; font-weight:900 !important;
+  letter-spacing:.04em;
+}
+.neon-book-button .calendar-symbol,
+.neon-book-button .button-arrow {
+  position:relative; z-index:1; color:#effff8 !important; font-size:20px !important;
+}
+.neon-book-button:active { filter:brightness(1.18) drop-shadow(0 0 9px #00ffc0) !important; }
+
+/* Reflective stat glass: polished top bevel, mint edges and dark transparent core. */
+.stats-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:7px !important; }
+.stat-card {
+  position:relative; isolation:isolate;
+  min-width:0; min-height:91px !important;
+  padding:8px 4px 7px !important;
+  display:flex; flex-direction:column; align-items:center; justify-content:space-between;
+  text-align:center;
+  border:0 !important; border-radius:0 !important;
+  clip-path:polygon(10% 0,90% 0,100% 12%,100% 88%,90% 100%,10% 100%,0 88%,0 12%);
+  background:linear-gradient(135deg,#dffff5 0%,#00ffb1 9%,#007a50 25%,#003822 56%,#00be83 84%,#f0fffa 100%) !important;
+  filter:drop-shadow(0 0 5px rgba(0,255,177,.55)) !important;
+}
+.stat-card::before {
+  content:""; position:absolute; z-index:-1; inset:2px;
+  clip-path:polygon(10% 0,90% 0,100% 12%,100% 88%,90% 100%,10% 100%,0 88%,0 12%);
+  background:
+    linear-gradient(135deg,rgba(235,255,249,.22),transparent 19%,transparent 67%,rgba(0,255,177,.08)),
+    linear-gradient(155deg,rgba(5,49,34,.98),rgba(0,11,7,.99) 62%,rgba(2,33,22,.98));
+  box-shadow:inset 0 0 16px rgba(0,255,177,.12);
+  pointer-events:none;
+}
+.stat-card::after {
+  content:""; position:absolute; z-index:2; inset:5px 4px;
+  clip-path:polygon(10% 0,90% 0,100% 12%,100% 88%,90% 100%,10% 100%,0 88%,0 12%);
+  border:1px solid rgba(202,255,239,.72);
+  background:linear-gradient(128deg,rgba(244,255,251,.12),transparent 26%,transparent 75%,rgba(0,255,177,.07));
+  pointer-events:none;
+}
+.stat-icon {
+  color:#87ffdf !important; font-size:20px !important; line-height:1;
+  filter:drop-shadow(0 0 5px rgba(0,255,190,.62));
+}
+.stat-card small {
+  color:#bdfbe5 !important; font-size:7px !important; font-weight:700;
+  line-height:1.1; text-shadow:0 1px 4px #000;
+}
+.stat-card strong {
+  color:#f2fff8 !important; font-size:8.5px !important;
+  line-height:1.15; font-weight:900 !important; overflow-wrap:anywhere;
+  text-shadow:0 1px 5px #000;
+}
+
+/* Gallery — glossy acrylic tiles, no dull/matte frames. */
+.rooms-section { margin-top:21px !important; }
+.section-heading {
+  position:relative; display:flex; align-items:center; justify-content:space-between;
+  gap:7px; margin-bottom:9px !important; padding-bottom:9px;
+  border-bottom:1px solid rgba(0,245,165,.48);
+}
+.section-heading::after {
+  content:""; position:absolute; left:0; bottom:-1px; width:52%; height:2px;
+  background:linear-gradient(90deg,#00ffb5,#e5fff6 52%,#00c985);
+  box-shadow:0 0 7px #00ffb5,0 0 15px rgba(0,255,181,.48);
+}
+.section-heading h2 {
+  color:#effff7 !important;
+  font-family:"Orbitron","Exo 2",sans-serif !important;
+  font-size:14px !important; font-weight:800; letter-spacing:-.03em;
+}
+.section-link {
+  color:#8effdc !important; border:0; background:transparent;
+  font-size:8px !important; font-weight:900; white-space:nowrap;
+  text-shadow:0 0 8px rgba(0,255,177,.35);
+}
+.section-link span { margin-left:4px; font-size:14px; }
+.room-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px !important; }
+.room-card {
+  position:relative; isolation:isolate;
+  width:100%; height:125px !important; min-width:0; overflow:hidden;
+  padding:0; display:block; text-align:left;
+  border:0 !important; border-radius:0 !important;
+  clip-path:polygon(9% 0,91% 0,100% 10%,100% 90%,91% 100%,9% 100%,0 90%,0 10%);
+  background:linear-gradient(135deg,#edfff8 0%,#00f5a5 10%,#006d48 28%,#00180f 58%,#00d78f 86%,#eafff7 100%) !important;
+  filter:drop-shadow(0 0 5px rgba(0,255,177,.64)) !important;
+}
+.room-card::before {
+  content:""; position:absolute; z-index:-1; inset:2px;
+  clip-path:polygon(9% 0,91% 0,100% 10%,100% 90%,91% 100%,9% 100%,0 90%,0 10%);
+  background:linear-gradient(135deg,rgba(240,255,250,.24),transparent 27%,transparent 65%,rgba(0,255,177,.12));
+  box-shadow:inset 0 0 14px rgba(0,255,177,.18);
+  pointer-events:none;
+}
+.room-card::after {
+  content:""; position:absolute; z-index:3; inset:5px 4px;
+  clip-path:polygon(9% 0,91% 0,100% 10%,100% 90%,91% 100%,9% 100%,0 90%,0 10%);
+  border:1px solid rgba(211,255,243,.68);
+  background:
+    linear-gradient(132deg,rgba(241,255,249,.17) 0%,transparent 20%,transparent 75%,rgba(0,255,177,.11) 100%);
+  pointer-events:none;
+}
+.room-card img {
+  position:absolute; z-index:-2; inset:2px;
+  width:calc(100% - 4px); height:calc(100% - 4px);
+  object-fit:cover; filter:saturate(1.16) contrast(1.08) brightness(1.05) !important;
+}
+.room-card-shade {
+  position:absolute; z-index:0; inset:2px;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 36%,rgba(0,0,0,.12) 58%,rgba(0,0,0,.82) 100%) !important;
+}
+.room-card-caption {
+  position:absolute; z-index:4; left:9px !important; right:6px !important; bottom:8px !important;
+  display:grid; gap:3px;
+}
+.room-card-caption small {
+  color:#aaffdf !important; font-size:6px !important; letter-spacing:.06em;
+  text-shadow:0 1px 5px #000;
+}
+.room-card-caption strong {
+  color:#fff !important; font-size:11px !important; font-weight:900 !important;
+  line-height:1.1; text-shadow:0 2px 7px #000;
+}
+.room-card-caption strong > svg.fa-icon { display:none !important; }
+.room-card-caption strong .fa-icon-label { font-size:11px !important; }
+.room-card:active img { transform:scale(1.04); }
+
+/* Contact panel and all inner screens share the same polished glass language. */
+.contact-panel, .booking-panel, .profile-panel {
+  border:1px solid rgba(0,255,177,.58) !important;
+  border-radius:0 16px 0 16px !important;
+  background:
+    linear-gradient(130deg,rgba(227,255,247,.11),transparent 22%,transparent 78%,rgba(0,255,177,.06)),
+    linear-gradient(145deg,rgba(4,43,29,.96),rgba(0,12,8,.98)) !important;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.15),inset 0 -10px 18px rgba(0,0,0,.27),0 0 12px rgba(0,255,177,.14) !important;
+  backdrop-filter:blur(10px) saturate(175%);
+  -webkit-backdrop-filter:blur(10px) saturate(175%);
+}
+.contact-icon, .contact-arrow { color:#8bffdf !important; }
+.booking-panel-top { border-color:rgba(0,245,165,.3) !important; }
+.form-field input, .form-field select, .guest-control {
+  color:#f2fff8 !important;
+  border:1px solid rgba(121,255,218,.72) !important;
+  border-radius:0 !important;
+  background:linear-gradient(145deg,rgba(2,38,25,.96),rgba(0,11,7,.99)) !important;
+  box-shadow:inset 0 1px 3px rgba(255,255,255,.1),inset 0 -5px 12px rgba(0,0,0,.3),0 0 6px rgba(0,245,165,.12) !important;
+}
+.guest-control button {
+  color:#bcffe9 !important; border-color:#75ffd6 !important;
+  background:linear-gradient(145deg,#075b3d,#02180f) !important;
+}
+.page-heading h1, .section-heading h2 {
+  font-family:"Orbitron","Exo 2",sans-serif !important;
+}
+
+/* Bottom navigation — reflective dark glass base and a vivid active underline. */
+.bottom-navigation {
+  position:fixed; z-index:25; left:50%; bottom:0; transform:translateX(-50%);
+  width:min(100%,560px); min-height:68px !important;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
+  padding:7px 8px calc(7px + env(safe-area-inset-bottom)) !important;
+  border-top:1px solid rgba(0,255,177,.72) !important;
+  background:
+    linear-gradient(180deg,rgba(0,255,177,.11),transparent 27%),
+    rgba(0,7,4,.97) !important;
+  box-shadow:0 -5px 20px rgba(0,0,0,.48),0 0 14px rgba(0,255,177,.12) !important;
+  backdrop-filter:blur(16px) saturate(160%);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);
+}
+.nav-button {
+  min-width:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:4px; border:0; background:transparent; color:#8da49a !important;
+}
+.nav-button span { font-size:21px !important; line-height:1; }
+.nav-button small { color:inherit; font-size:8px !important; font-weight:700; }
+.nav-button.active { color:#a0ffe1 !important; text-shadow:0 0 10px rgba(0,255,177,.42); }
+.nav-button.active::after {
+  content:""; width:72%; height:3px; margin-top:2px;
+  background:linear-gradient(90deg,#00f5a5,#eafff7,#00f5a5);
+  box-shadow:0 0 7px #00ffb5,0 0 15px rgba(0,255,177,.75);
+}
+
+/* Drawer, lightbox and toast retain working behavior but inherit glossy surfaces. */
+.side-drawer {
+  border-left:1px solid rgba(0,255,177,.82) !important;
+  background:linear-gradient(150deg,rgba(5,64,42,.99),rgba(0,8,5,.99)) !important;
+}
+.drawer-heading, .drawer-link { border-color:rgba(0,255,177,.24) !important; }
+.drawer-heading button, .drawer-language button {
+  color:#dffff3 !important; border-color:#70ffcf !important;
+  background:linear-gradient(145deg,#07583b,#01160d) !important;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.24),0 0 8px rgba(0,255,177,.2);
+}
+.lightbox figure img { border-color:#71ffd3 !important; box-shadow:0 0 18px rgba(0,255,177,.3); }
+.lightbox-close, .lightbox-arrow {
+  color:#eafff7 !important; border-color:#75ffd6 !important;
+  background:linear-gradient(145deg,#07583b,#01160d) !important;
+}
+.toast-message {
+  border-color:#75ffd6 !important;
+  background:linear-gradient(145deg,#07583b,#01160d) !important;
+  box-shadow:0 0 16px rgba(0,255,177,.3) !important;
+}
+
+/* Small screens. Maintain the one-row four-card strip and three gallery tiles. */
+@media (max-width:390px) {
+  .app-shell { padding-left:12px !important; padding-right:12px !important; }
+  .hero-panel { height:250px !important; }
+  .hero-panel .hero-image {
+    width:74% !important;
+    background-position:58% center !important;
+    clip-path:polygon(60% 0,100% 0,100% 100%,42% 100%) !important;
+  }
+  .hero-panel .hero-content { width:73% !important; padding:14px 10px 8px !important; }
+  .hero-content h1 { font-size:clamp(24px,7.2vw,29px) !important; }
+  .hero-content h2 { font-size:15px !important; }
+  .hero-benefits { gap:5px !important; margin-top:8px !important; }
+  .hero-benefits li { font-size:8px !important; }
+  .stats-grid { gap:5px !important; }
+  .stat-card { min-height:84px !important; padding-left:2px !important; padding-right:2px !important; }
+  .stat-card small { font-size:6.3px !important; }
+  .stat-card strong { font-size:7.5px !important; }
+  .room-card { height:116px !important; }
+  .room-card-caption { left:7px !important; }
+  .room-card-caption strong, .room-card-caption strong .fa-icon-label { font-size:9px !important; }
+}
+@media (max-width:345px) {
+  .brand-name strong { font-size:13px !important; }
+  .hero-panel { height:242px !important; }
+  .hero-panel .hero-content { width:76% !important; }
+  .hero-content h1 { font-size:23px !important; }
+  .hero-benefits li { font-size:7.2px !important; }
+  .stats-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  .room-grid-preview { grid-template-columns:repeat(3,minmax(0,1fr)) !important; }
+  .room-card { height:94px !important; }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior:auto !important; animation:none !important; transition:none !important; }
+}
