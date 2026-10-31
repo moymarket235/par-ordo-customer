@@ -216,16 +216,6 @@ function render() {
           <div class="drawer-footer">AZA DIGITAL ECOSYSTEM</div>
         </aside>
       </div>
-      
-          <div class="drawer-language"><span>LANGUAGE / ТИЛ</span><button id="languageBtn">${language === "ru" ? "RU / KG" : "KG / RU"}</button></div>
-          <button class="drawer-link" data-drawer-tab="home">${t.home}<b>↗</b></button>
-          <button class="drawer-link" data-drawer-tab="booking">${t.bookingTab}<b>↗</b></button>
-          <button class="drawer-link" data-drawer-tab="gallery">${t.galleryTab}<b>↗</b></button>
-          <button class="drawer-link" data-drawer-tab="profile">${t.profile}<b>↗</b></button>
-          <button class="drawer-link install-link" id="installAction" data-install-app hidden>📲 ${t.install}</button>
-          <div class="drawer-footer">AZA DIGITAL ECOSYSTEM</div>
-        </aside>
-      </div>
 
       <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
         <button class="lightbox-close" id="closeLightbox" aria-label="${t.close}">×</button>
