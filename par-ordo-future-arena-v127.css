@@ -1,0 +1,43 @@
+/* PAR ORDO FUTURE ARENA V127 — hero frame correction only */
+.hero-panel{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:#02150d;
+}
+/* Keep image and dark text panel below content */
+.hero-panel .hero-image{z-index:0!important;}
+.hero-panel .hero-dark{z-index:1!important;}
+.hero-panel .hero-content{position:relative;z-index:2!important;}
+.hero-panel .hero-corner{z-index:5!important;}
+/* Hollow neon frame: mask out the center so it cannot wash over the hero */
+.hero-panel:before{
+  content:"";
+  position:absolute;
+  z-index:4;
+  inset:0;
+  padding:3px;
+  pointer-events:none;
+  background:linear-gradient(135deg,#baffec 0%,#00f3a0 22%,rgba(0,245,160,.38) 50%,#00f3a0 82%,#baffec 100%);
+  clip-path:polygon(0 0,96.5% 0,100% 5%,100% 94%,96.5% 100%,5% 100%,0 95%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+}
+.hero-panel:after{
+  content:"";
+  position:absolute;
+  z-index:4;
+  inset:5px;
+  padding:1px;
+  pointer-events:none;
+  background:linear-gradient(135deg,rgba(185,255,235,.9),rgba(0,245,160,.2),rgba(0,245,160,.8));
+  clip-path:polygon(0 0,96.5% 0,100% 5%,100% 94%,96.5% 100%,5% 100%,0 95%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+}
+/* The dark overlay stays behind text and photo details */
+.hero-panel .hero-dark:after{z-index:2;pointer-events:none;}
