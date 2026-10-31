@@ -1,0 +1,60 @@
+/* PAR ORDO V151 — FIXED BOTTOM NAVIGATION
+   Variant 1: navigation remains pinned to the viewport bottom.
+   Keep enough scroll space so page content is never hidden behind the nav. */
+
+html, body {
+  min-height: 100% !important;
+}
+body {
+  padding-bottom: calc(76px + env(safe-area-inset-bottom)) !important;
+}
+.app-shell {
+  min-height: 100vh !important;
+  height: auto !important;
+  padding-bottom: calc(88px + env(safe-area-inset-bottom)) !important;
+}
+.main-content {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-bottom: 0 !important;
+}
+.screen.active {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-bottom: 0 !important;
+}
+.bottom-navigation {
+  position: fixed !important;
+  z-index: 25 !important;
+  left: 50% !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: 0 !important;
+  transform: translateX(-50%) !important;
+  width: min(100%, 560px) !important;
+  max-width: 560px !important;
+  min-height: 68px !important;
+  margin: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 2px !important;
+  padding: 7px 8px calc(7px + env(safe-area-inset-bottom)) !important;
+  border-top: 1px solid rgba(0,255,177,.72) !important;
+  background:
+    linear-gradient(180deg, rgba(0,255,177,.11), transparent 27%),
+    rgba(0,7,4,.97) !important;
+  box-shadow: 0 -5px 20px rgba(0,0,0,.48), 0 0 14px rgba(0,255,177,.12) !important;
+  backdrop-filter: blur(16px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
+}
+#homeScreen.active,
+#bookingScreen.active,
+#galleryScreen.active,
+#profileScreen.active {
+  margin-bottom: 0 !important;
+}
+@media (max-width: 390px) {
+  .app-shell {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom)) !important;
+  }
+}
