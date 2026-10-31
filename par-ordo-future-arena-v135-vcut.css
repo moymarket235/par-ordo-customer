@@ -1,0 +1,120 @@
+/* PAR ORDO — FUTURE ARENA V135 / SINGLE V-CUT GLASS SEAM
+   Replaces the extra diagonal overlay with one shaped black panel + one glass V edge.
+   Loaded after V133 and V134 icon fix. */
+
+.hero-panel {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+}
+
+/* The photo fills the full hero canvas. Only its left boundary is V-cut. */
+.hero-panel .hero-image {
+  position: absolute !important;
+  z-index: 0 !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-position: 58% center !important;
+  background-size: cover !important;
+  clip-path: polygon(
+    69% 0,
+    100% 0,
+    100% 100%,
+    58.5% 100%,
+    42% 58%
+  ) !important;
+  filter: saturate(1.17) contrast(1.08) brightness(1.08) !important;
+}
+
+/* No full-width dark gradient: the dark side itself is a single polygon cut. */
+.hero-panel .hero-dark {
+  position: absolute !important;
+  z-index: 1 !important;
+  inset: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+}
+
+/* One clean dark-glass text panel with the exact V-shaped edge.
+   This replaces the old straight/angled black overlay that created the extra seam. */
+.hero-panel .hero-dark::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  clip-path: polygon(
+    0 0,
+    69% 0,
+    42% 58%,
+    58.5% 100%,
+    0 100%
+  ) !important;
+  background:
+    linear-gradient(135deg, rgba(0, 22, 14, .98), rgba(0, 10, 6, .985) 60%, rgba(0, 25, 16, .96)),
+    linear-gradient(115deg, rgba(225, 255, 245, .09), transparent 25%) !important;
+  box-shadow: inset -8px 0 18px rgba(0, 245, 165, .08) !important;
+}
+
+/* Single glass blade, following the same V boundary:
+   top-right -> inward point -> lower-right. No second green diagonal. */
+.hero-panel .hero-dark::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 3 !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  clip-path: polygon(
+    68.1% 0,
+    70.1% 0,
+    43.7% 58%,
+    60.2% 100%,
+    57.1% 100%,
+    40.2% 58%
+  ) !important;
+  background:
+    linear-gradient(90deg,
+      rgba(0, 112, 73, .88) 0%,
+      #00d990 20%,
+      #aaffea 43%,
+      #f4fffb 50%,
+      #67ffd3 61%,
+      #00bd7b 82%,
+      rgba(0, 103, 66, .92) 100%) !important;
+  filter:
+    drop-shadow(0 0 3px rgba(225, 255, 246, .9))
+    drop-shadow(0 0 8px rgba(0, 255, 183, .95))
+    drop-shadow(0 0 17px rgba(0, 255, 183, .52)) !important;
+  opacity: 1 !important;
+}
+
+/* Keep title and benefit text above the shaped panel, not underneath the blade. */
+.hero-panel .hero-content {
+  position: relative !important;
+  z-index: 5 !important;
+  width: 70% !important;
+}
+
+/* Preserve the original double outer frame; the V seam is the only inner divider. */
+.hero-panel::before,
+.hero-panel::after {
+  pointer-events: none !important;
+}
+
+/* Phone layout: same geometry, a slightly more central picture crop. */
+@media (max-width: 390px) {
+  .hero-panel .hero-image {
+    background-position: 60% center !important;
+    clip-path: polygon(
+      69% 0,
+      100% 0,
+      100% 100%,
+      58.5% 100%,
+      42% 58%
+    ) !important;
+  }
+  .hero-panel .hero-content {
+    width: 70% !important;
+  }
+}
