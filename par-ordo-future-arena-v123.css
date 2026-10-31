@@ -1,0 +1,341 @@
+/* PAR ORDO — FUTURE ARENA V123
+   Visual-only overrides for the existing customer app.
+   Booking form, API calls, navigation and JavaScript remain untouched. */
+
+:root {
+  --bg: #020907;
+  --panel: #041a12;
+  --panel-bright: #06271a;
+  --green: #00f5a0;
+  --green-light: #75ffda;
+  --gold: #f4d77f;
+  --white: #f4fff9;
+  --muted: #9ab7aa;
+  --line: rgba(0, 245, 160, .52);
+}
+
+html, body {
+  background: #020907;
+}
+body {
+  background:
+    radial-gradient(ellipse at 50% 5%, rgba(0, 255, 160, .13), transparent 34rem),
+    linear-gradient(rgba(0, 255, 160, .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 160, .025) 1px, transparent 1px),
+    #020907;
+  background-size: auto, 34px 34px, 34px 34px, auto;
+}
+.app-shell {
+  width: min(100%, 560px);
+  padding: 12px 16px 100px;
+  overflow: hidden;
+}
+
+/* Header */
+.app-header {
+  min-height: 69px;
+  padding: 5px 0 13px;
+  border-bottom: 1px solid rgba(0, 245, 160, .3);
+  margin-bottom: 13px;
+}
+.brand-logo {
+  width: 54px;
+  height: 54px;
+  flex-basis: 54px;
+  border: 1.5px solid #e4c46d;
+  box-shadow: 0 0 0 3px rgba(0, 245, 160, .08), 0 0 20px rgba(0, 245, 160, .18), 0 0 16px rgba(228, 196, 109, .24);
+}
+.brand-name strong {
+  font-size: 16px;
+  letter-spacing: .23em;
+}
+.brand-name small {
+  font-size: 9px;
+  letter-spacing: .22em;
+}
+.header-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 10px;
+  border-color: rgba(0, 245, 160, .55);
+  background: linear-gradient(145deg, rgba(4, 46, 30, .96), rgba(2, 16, 11, .98));
+  color: var(--green-light);
+  box-shadow: inset 0 0 12px rgba(0,245,160,.08), 0 0 12px rgba(0,245,160,.08);
+}
+
+/* Main hero — compact, angular phone-first composition */
+.hero-panel {
+  height: clamp(260px, 73vw, 330px);
+  border: 1px solid rgba(0, 245, 160, .78);
+  border-radius: 16px 25px 17px 25px;
+  background: #03150e;
+  box-shadow: 0 0 0 1px rgba(0,245,160,.09), 0 12px 32px rgba(0,0,0,.36), 0 0 24px rgba(0,245,160,.13);
+}
+.hero-image {
+  width: 64%;
+  background-position: center center;
+  clip-path: polygon(38% 0, 100% 0, 100% 100%, 0 100%, 30% 52%);
+  filter: saturate(1.12) contrast(1.06);
+}
+.hero-dark {
+  background:
+    linear-gradient(90deg, rgba(1, 13, 9, .99) 0%, rgba(1, 13, 9, .93) 31%, rgba(1, 13, 9, .52) 57%, rgba(1, 10, 7, .04) 100%),
+    linear-gradient(0deg, rgba(0,0,0,.38), transparent 55%);
+}
+.hero-content {
+  width: 76%;
+  padding: 17px 14px 13px;
+}
+.hero-eyebrow {
+  font-size: 8px;
+  letter-spacing: .13em;
+  color: #79ffdc;
+}
+.hero-content h1 {
+  margin-top: 14px;
+  font-size: clamp(31px, 8.2vw, 39px);
+  line-height: .96;
+  letter-spacing: -.025em;
+  font-style: italic;
+  font-weight: 950;
+  text-shadow: 0 0 15px rgba(0,0,0,.85), 0 0 12px rgba(0,245,160,.12);
+}
+.hero-content h2 {
+  margin-top: 6px;
+  font-size: clamp(15px, 4vw, 19px);
+  color: var(--gold);
+  letter-spacing: .015em;
+}
+.hero-guest {
+  margin-top: 11px;
+  padding: 5px 7px;
+  font-size: 9px;
+  border-bottom-color: rgba(0,245,160,.6);
+}
+.hero-benefits {
+  gap: 6px;
+  margin-top: 10px;
+}
+.hero-benefits li {
+  gap: 8px;
+  font-size: 9px;
+}
+.hero-benefits b {
+  color: var(--gold);
+  font-size: 14px;
+}
+.hero-corner {
+  right: 10px;
+  bottom: 9px;
+  width: 45%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f5a0 45%, #a0ffe6);
+  box-shadow: 0 0 10px #00f5a0;
+}
+
+/* Brighter angular booking action */
+.neon-book-button {
+  min-height: 54px;
+  margin: 11px 0 13px;
+  padding: 10px 12px;
+  gap: 11px;
+  border: 1px solid #00ffae;
+  border-radius: 0;
+  clip-path: polygon(3.5% 0, 96.5% 0, 100% 18%, 100% 82%, 96.5% 100%, 3.5% 100%, 0 82%, 0 18%);
+  color: #f4fff9;
+  background: linear-gradient(100deg, #007d50 0%, #00d88f 48%, #006d48 100%);
+  box-shadow: 0 0 10px rgba(0,255,174,.7), 0 0 27px rgba(0,255,174,.28), inset 0 0 18px rgba(165,255,225,.25);
+  filter: drop-shadow(0 0 7px rgba(0,255,174,.38));
+}
+.neon-book-button::before {
+  inset: 4px;
+  border: 1px solid rgba(195,255,232,.7);
+  border-radius: 0;
+  clip-path: polygon(3.5% 0, 96.5% 0, 100% 18%, 100% 82%, 96.5% 100%, 3.5% 100%, 0 82%, 0 18%);
+}
+.neon-book-button strong {
+  font-size: 12px;
+  color: #f6fffa;
+  text-shadow: 0 1px 4px rgba(0,0,0,.45);
+}
+.calendar-symbol, .button-arrow {
+  color: #d7fff0;
+}
+
+/* Four compact futuristic metric tiles */
+.stats-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+.stat-card {
+  min-height: 92px;
+  padding: 9px 4px 8px;
+  border: 1px solid rgba(65, 255, 187, .62);
+  border-radius: 0;
+  clip-path: polygon(8% 0, 92% 0, 100% 10%, 100% 90%, 92% 100%, 8% 100%, 0 90%, 0 10%);
+  background: linear-gradient(155deg, rgba(4, 38, 25, .98), rgba(2, 15, 10, .98));
+  box-shadow: inset 0 0 16px rgba(0,245,160,.08), 0 0 10px rgba(0,245,160,.05);
+}
+.stat-icon {
+  color: var(--green-light);
+  font-size: 18px;
+}
+.stat-card small {
+  color: #a9ffdf;
+  font-size: 7px;
+  line-height: 1.12;
+}
+.stat-card strong {
+  color: #f4fff9;
+  font-size: 8px;
+  line-height: 1.2;
+  font-weight: 850;
+}
+
+/* Room gallery cards */
+.rooms-section {
+  margin-top: 23px;
+}
+.section-heading {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 0 0 7px;
+  border-bottom: 1px solid rgba(0,245,160,.48);
+}
+.section-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 38%;
+  height: 2px;
+  background: var(--green);
+  box-shadow: 0 0 9px var(--green);
+}
+.section-heading h2 {
+  font-size: 16px;
+  letter-spacing: .015em;
+  font-weight: 900;
+}
+.section-link {
+  color: var(--green-light);
+  font-size: 7px;
+}
+.room-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+.room-card {
+  height: 126px;
+  border: 1px solid rgba(0,245,160,.72);
+  border-radius: 0;
+  clip-path: polygon(8% 0, 92% 0, 100% 9%, 100% 91%, 92% 100%, 8% 100%, 0 91%, 0 9%);
+  box-shadow: 0 0 11px rgba(0,245,160,.12), inset 0 0 12px rgba(0,245,160,.08);
+}
+.room-card img {
+  filter: saturate(1.08) contrast(1.04);
+}
+.room-card-caption {
+  left: 7px;
+  right: 5px;
+  bottom: 8px;
+  gap: 4px;
+}
+.room-card-caption small {
+  font-size: 5.5px;
+  color: #90ffe0;
+}
+.room-card-caption strong {
+  font-size: 9px;
+}
+.contact-panel {
+  margin-top: 17px;
+  padding: 12px 11px;
+  border: 1px solid rgba(0,245,160,.52);
+  border-radius: 0 20px 0 20px;
+  background: linear-gradient(135deg, rgba(5,35,23,.95), rgba(2,15,10,.96));
+  box-shadow: inset 0 0 15px rgba(0,245,160,.055), 0 0 15px rgba(0,245,160,.05);
+}
+.contact-panel small {
+  color: var(--green-light);
+}
+
+/* Fixed four-item navigation */
+.bottom-navigation {
+  min-height: 70px;
+  padding: 7px 8px calc(7px + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(0,245,160,.6);
+  background: rgba(1, 12, 8, .97);
+  box-shadow: 0 -5px 24px rgba(0,245,160,.08), 0 -8px 25px rgba(0,0,0,.36);
+}
+.nav-button {
+  gap: 4px;
+  color: #899d93;
+}
+.nav-button span {
+  font-size: 19px;
+}
+.nav-button small {
+  font-size: 8px;
+}
+.nav-button.active {
+  color: var(--green-light);
+  text-shadow: 0 0 12px rgba(0,245,160,.4);
+}
+
+/* Booking, profile and gallery screens follow the same visual system */
+.booking-panel, .profile-panel {
+  border: 1px solid rgba(0,245,160,.66);
+  border-radius: 0 18px 0 18px;
+  background: linear-gradient(145deg, rgba(5,40,26,.98), rgba(2,14,9,.98));
+  box-shadow: inset 0 0 18px rgba(0,245,160,.07), 0 0 18px rgba(0,245,160,.08);
+}
+.form-field input, .form-field select {
+  border-radius: 0;
+  border-color: rgba(0,245,160,.48);
+  background: #03170e;
+}
+.guest-control {
+  border-radius: 0;
+  border-color: rgba(0,245,160,.42);
+}
+.room-card-large {
+  height: 180px;
+}
+.toast-message {
+  border-radius: 0;
+  background: #042418;
+  box-shadow: 0 0 22px rgba(0,245,160,.18);
+}
+
+@media (max-width: 390px) {
+  .app-shell { padding-left: 13px; padding-right: 13px; }
+  .hero-panel { height: 275px; }
+  .hero-content { width: 78%; padding: 15px 12px 12px; }
+  .hero-content h1 { font-size: 32px; }
+  .hero-content h2 { font-size: 16px; }
+  .hero-eyebrow { font-size: 7px; }
+  .hero-benefits { gap: 5px; }
+  .hero-benefits li { font-size: 8px; }
+  .brand-logo { width: 49px; height: 49px; flex-basis: 49px; }
+  .brand-name strong { font-size: 14px; }
+  .header-icon { width: 39px; height: 40px; }
+  .stat-card { min-height: 88px; }
+  .stat-card small { font-size: 6.5px; }
+  .stat-card strong { font-size: 7.5px; }
+  .room-card { height: 116px; }
+  .room-card-caption { left: 5px; right: 4px; }
+  .room-card-caption strong { font-size: 8px; }
+}
+@media (max-width: 345px) {
+  .stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stat-card { min-height: 82px; }
+  .stat-card small { font-size: 6px; }
+  .stat-card strong { font-size: 7px; }
+  .room-grid-preview { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero-panel { height: 265px; }
+  .booking-form { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
