@@ -1,0 +1,52 @@
+/* PAR ORDO V150 — FLOW NAVIGATION / REMOVE BOTTOM EMPTY SPACE
+   Navigation follows the content instead of staying fixed on the viewport.
+   Preserve emerald styling, active indicators, and existing JS tab behavior. */
+
+html, body {
+  min-height: 0 !important;
+}
+body {
+  padding-bottom: 0 !important;
+}
+.app-shell {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-bottom: 0 !important;
+}
+.main-content {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-bottom: 0 !important;
+}
+.screen.active {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-bottom: 0 !important;
+}
+.bottom-navigation {
+  position: relative !important;
+  left: auto !important;
+  bottom: auto !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 18px 0 0 !important;
+  min-height: 68px !important;
+  padding: 9px 8px calc(9px + env(safe-area-inset-bottom)) !important;
+  z-index: 25;
+}
+/* Keep the end of each page close to the nav, without overlap. */
+#homeScreen.active,
+#bookingScreen.active,
+#galleryScreen.active,
+#profileScreen.active {
+  margin-bottom: 0 !important;
+}
+/* Do not change the fixed behavior of drawers, lightbox, or toast. */
+@media (max-width: 390px) {
+  .bottom-navigation {
+    margin-top: 14px !important;
+  }
+}
