@@ -1,0 +1,211 @@
+/* PAR ORDO — FUTURE ARENA V128
+   Typography and precision-frame refinement.
+   Load after V125 and V127. Visual only: app.js and booking API remain unchanged. */
+
+:root {
+  --fa-ink: #010805;
+  --fa-panel: #03170f;
+  --fa-neon: #00f2a0;
+  --fa-neon-hi: #9affdf;
+  --fa-gold: #f0d47e;
+  --fa-white: #f3fff8;
+  --fa-muted: #a5bdb2;
+  --fa-cut-line: rgba(112,255,213,.78);
+}
+
+/* Typography: technical display headings + readable geometric body */
+html, body {
+  font-family: "Exo 2", "Segoe UI", Arial, sans-serif !important;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
+}
+button, input, select { font-family: inherit !important; }
+.brand-name strong {
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-weight: 700;
+  letter-spacing: .19em;
+  text-shadow: 0 0 10px rgba(0,245,160,.12);
+}
+.brand-name small {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 600;
+  letter-spacing: .24em;
+}
+.hero-eyebrow, .section-label, .room-card-caption small,
+.contact-panel > div > small {
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-weight: 700;
+  letter-spacing: .105em;
+}
+.hero-content h1 {
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -.075em;
+  line-height: .98;
+  text-transform: uppercase;
+  text-shadow: 0 2px 2px rgba(0,0,0,.65), 0 0 13px rgba(0,245,160,.12);
+  transform: skewX(-4deg);
+  transform-origin: left center;
+}
+.hero-content h2, .page-heading h1 {
+  font-family: "Exo 2", "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: .005em;
+}
+.section-heading h2 {
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-weight: 700;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+.page-heading h1 {
+  font-family: "Orbitron", "Exo 2", sans-serif;
+  font-weight: 700;
+  letter-spacing: -.045em;
+}
+.neon-book-button strong, .form-field span, .guest-control > span {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 800;
+  letter-spacing: .035em;
+}
+.stat-card small {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 600;
+  letter-spacing: .005em;
+}
+.stat-card strong {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 800;
+  letter-spacing: -.015em;
+  font-variant-numeric: tabular-nums;
+}
+.room-card-caption strong { font-family: "Exo 2", sans-serif; font-weight: 750; }
+.nav-button small { font-family: "Exo 2", sans-serif; font-weight: 600; letter-spacing: .01em; }
+
+/* Consistent sharp-cut geometry and double edge treatment */
+.hero-panel {
+  border-radius: 0 !important;
+  clip-path: polygon(0 0, 96.2% 0, 100% 5.5%, 100% 93.8%, 96.1% 100%, 5.2% 100%, 0 94.8%);
+  filter: drop-shadow(0 0 9px rgba(0,245,160,.10));
+}
+.hero-panel:before {
+  z-index: 4 !important;
+  inset: 0 !important;
+  padding: 2px !important;
+  background: linear-gradient(132deg, #baffec 0%, #00f2a0 16%, rgba(0,245,160,.35) 43%, #00f2a0 76%, #baffec 100%) !important;
+  clip-path: polygon(0 0, 96.2% 0, 100% 5.5%, 100% 93.8%, 96.1% 100%, 5.2% 100%, 0 94.8%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 4px rgba(0,245,160,.65));
+}
+.hero-panel:after {
+  z-index: 4 !important;
+  inset: 5px !important;
+  padding: 1px !important;
+  background: linear-gradient(145deg, rgba(202,255,239,.88), rgba(0,245,160,.15) 38%, rgba(0,245,160,.82)) !important;
+  clip-path: polygon(0 0, 96.2% 0, 100% 5.5%, 100% 93.8%, 96.1% 100%, 5.2% 100%, 0 94.8%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+.hero-panel .hero-image { clip-path: polygon(39% 0, 100% 0, 100% 100%, 0 100%, 33% 52%); }
+.hero-dark:after {
+  width: 2px;
+  opacity: .95;
+  box-shadow: 0 0 7px var(--fa-neon), 0 0 16px rgba(0,245,160,.65);
+}
+
+/* CTA: precise octagonal corners, inset highlight and crisp glow */
+.neon-book-button {
+  border: 0 !important;
+  border-radius: 0 !important;
+  clip-path: polygon(3.2% 0, 96.8% 0, 100% 17%, 100% 83%, 96.8% 100%, 3.2% 100%, 0 83%, 0 17%);
+  background: linear-gradient(105deg, #00543a 0%, #008e5d 48%, #00432d 100%) !important;
+  filter: drop-shadow(0 0 5px rgba(0,255,174,.62)) drop-shadow(0 0 12px rgba(0,255,174,.22));
+  min-height: 55px;
+  letter-spacing: .045em;
+}
+.neon-book-button:before {
+  inset: 3px !important;
+  border: 1px solid rgba(205,255,238,.92) !important;
+  clip-path: polygon(3.2% 0, 96.8% 0, 100% 17%, 100% 83%, 96.8% 100%, 3.2% 100%, 0 83%, 0 17%);
+  box-shadow: inset 0 0 12px rgba(0,245,160,.25);
+}
+.neon-book-button:after {
+  left: 5.5%; right: 5.5%; top: 7px; height: 1px;
+  background: linear-gradient(90deg, transparent, #d3fff0 17%, #83ffdc 82%, transparent);
+}
+
+/* KPI frames: clean chamfers, dark center, two luminous rules */
+.stats-grid { gap: 7px !important; }
+.stat-card {
+  min-height: 94px !important;
+  padding: 8px 4px 7px !important;
+  clip-path: polygon(10% 0, 90% 0, 100% 12%, 100% 88%, 90% 100%, 10% 100%, 0 88%, 0 12%) !important;
+  background: linear-gradient(135deg, #74ffda 0%, #00c982 22%, #034d36 54%, #00d88f 83%, #9affdf 100%) !important;
+}
+.stat-card:before {
+  inset: 1.5px !important;
+  clip-path: polygon(10% 0, 90% 0, 100% 12%, 100% 88%, 90% 100%, 10% 100%, 0 88%, 0 12%) !important;
+  background: linear-gradient(155deg, #05291d 0%, #02130c 58%, #031c12 100%) !important;
+}
+.stat-card:after {
+  inset: 5px 4px !important;
+  clip-path: polygon(10% 0, 90% 0, 100% 12%, 100% 88%, 90% 100%, 10% 100%, 0 88%, 0 12%) !important;
+  border: 1px solid rgba(132,255,221,.44) !important;
+  background: linear-gradient(180deg, rgba(0,245,160,.075), transparent 44%, rgba(0,245,160,.035)) !important;
+}
+.stat-card .fa-icon { filter: drop-shadow(0 0 5px rgba(0,245,160,.42)); }
+
+/* Room tiles: sharper top and bottom corner cuts with bright edge */
+.room-grid { gap: 8px !important; }
+.room-card {
+  height: 124px !important;
+  clip-path: polygon(8% 0, 92% 0, 100% 10%, 100% 90%, 92% 100%, 8% 100%, 0 90%, 0 10%) !important;
+  background: linear-gradient(135deg, #95ffe2, #00bd7b 35%, #033c29 64%, #00e49a) !important;
+}
+.room-card:before {
+  inset: 1.5px !important;
+  clip-path: polygon(8% 0, 92% 0, 100% 10%, 100% 90%, 92% 100%, 8% 100%, 0 90%, 0 10%) !important;
+  background: linear-gradient(135deg, rgba(200,255,240,.55), transparent 27%, transparent 72%, rgba(0,245,160,.54)) !important;
+}
+.room-card:after {
+  inset: 5px 3px !important;
+  clip-path: polygon(8% 0, 92% 0, 100% 10%, 100% 90%, 92% 100%, 8% 100%, 0 90%, 0 10%) !important;
+  background: linear-gradient(180deg, rgba(0,245,160,.05), transparent 30%, transparent 72%, rgba(0,0,0,.32)) !important;
+}
+.room-card img { filter: saturate(1.13) contrast(1.08) !important; }
+.room-card-caption small { text-shadow: 0 1px 5px #00150d; }
+.room-card-caption strong { text-shadow: 0 1px 6px #000; }
+
+/* Booking form and profile: square precision corners, no soft rounded UI */
+.booking-panel, .profile-panel { border-radius: 0 18px 0 18px !important; }
+.form-field input, .form-field select { border-radius: 0 !important; border-width: 1px !important; }
+.guest-control { border-radius: 0 !important; }
+.guest-control button { border-radius: 0 8px 0 8px !important; }
+
+/* Navigation icons and active state */
+.bottom-navigation { border-top: 1px solid rgba(0,245,160,.62) !important; }
+.nav-button.active { color: #8affdc !important; }
+.nav-button.active:after { height: 2px !important; box-shadow: 0 0 10px var(--fa-neon), 0 0 18px rgba(0,245,160,.42) !important; }
+
+@media (max-width: 390px) {
+  .hero-content h1 { font-size: 30px !important; }
+  .hero-content h2 { font-size: 15px !important; }
+  .section-heading h2 { font-size: 14px !important; }
+  .stat-card { min-height: 88px !important; }
+  .stat-card small { font-size: 6.2px !important; }
+  .stat-card strong { font-size: 7.2px !important; }
+  .room-card { height: 118px !important; }
+  .room-card-caption strong { font-size: 8px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
