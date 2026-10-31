@@ -7,13 +7,50 @@
   <meta name="theme-color" content="#06100d">
   <meta name="description" content="PAR ORDO — Premium Sauna Booking">
   <title>PAR ORDO | FUTURE ARENA</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
   <div id="app">
     <p>PAR ORDO жүктөлүүдө...</p>
   </div>
 
-  <script src="app.js" defer></script>
+  <button id="installApp"
+    style="display:none;position:fixed;bottom:85px;left:16px;right:16px;
+    padding:16px;background:#00f5a0;color:#06100d;
+    border:0;border-radius:14px;font-weight:bold;z-index:9999;">
+    📲 PAR ORDO ОРНОТУУ
+  </button>
+
+  <script src="./app.js" defer></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+          .catch(error => console.error("SW:", error));
+      });
+    }
+
+    let installPrompt;
+
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault();
+      installPrompt = event;
+      document.getElementById("installApp").style.display = "block";
+    });
+
+    document.getElementById("installApp").addEventListener("click", async () => {
+      if (!installPrompt) return;
+      installPrompt.prompt();
+      await installPrompt.userChoice;
+      installPrompt = null;
+      document.getElementById("installApp").style.display = "none";
+    });
+  </script>
 </body>
 </html>
