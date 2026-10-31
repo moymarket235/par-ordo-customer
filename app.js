@@ -182,3 +182,8 @@ function render() {
 }
 
 render();
+document.getElementById("noticeBtn").onclick = () => {
+  alert(currentLanguage === "ru"
+    ? "Уведомления скоро появятся"
+    : "Билдирүүлөр жакында кошулат");
+};
